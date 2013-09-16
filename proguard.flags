@@ -1,0 +1,12 @@
+# Disable the warnings of using dynamic method call in common library.
+-keep class * extends com.koushikdutta.async.TapCallback {
+  public protected private *;
+}
+
+-keep class android.net.nsd.DnsSdTxtRecord {
+  public protected private *;
+}
+
+-keep class android.net.nsd.NsdServiceInfo {
+  public protected private *;
+}

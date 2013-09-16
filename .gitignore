@@ -1,0 +1,8 @@
+bin
+.settings
+local.properties
+gen
+.gradle
+build
+.DS_Store
+*.apk
