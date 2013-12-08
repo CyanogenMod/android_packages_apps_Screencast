@@ -10,5 +10,5 @@
     <string name="video_length">Video Length: %s</string>
     <string name="not_enough_storage">Not enough storage available</string>
     <string name="start_screencast">Start Screencast</string>
-    <string name="start_description">Pretty "Start Screencast" to begin recording your Android screen and microphone to a video file.</string>
+    <string name="start_description">Pretty \"Start Screencast\" to begin recording a video of your Android screen and microphone.</string>
 </resources>
