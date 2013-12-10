@@ -10,8 +10,9 @@ LOCAL_SRC_FILES += $(call all-java-files-under, src)
 # causes build errors in CM
 LOCAL_SRC_FILES := $(filter-out src/android/net/nsd/DnsSdTxtRecord.java, $(LOCAL_SRC_FILES))
 
-LOCAL_PACKAGE_NAME := Mirror
+LOCAL_PACKAGE_NAME := Screencast
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
 
 include $(BUILD_PACKAGE)
