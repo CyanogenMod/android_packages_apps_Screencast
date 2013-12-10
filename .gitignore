@@ -6,3 +6,4 @@ gen
 build
 .DS_Store
 *.apk
+proguard_logs/
