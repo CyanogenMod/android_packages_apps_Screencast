@@ -50,7 +50,6 @@ public class ScreencastService extends Service {
     RecordingDevice recorder;
 
     private static final String SHOW_TOUCHES = "show_touches";
-    private boolean wasShowingTouches;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -129,18 +128,8 @@ public class ScreencastService extends Service {
                 startTime = System.currentTimeMillis();
                 registerScreencaster();
                 mBuilder = createNotificationBuilder();
-                // record the initial state of show_touches,
-                // if show_touches is not enabled, give user the option to enable it
-                SharedPreferences sp = getSharedPreferences(AIRPLAY_PREFS_NAME,
-                        Context.MODE_PRIVATE);
-                if (Settings.System.getInt(getContentResolver(), SHOW_TOUCHES, 0) == 0) {
-                    sp.edit().putInt(SHOW_TOUCHES_INIT, 0);
-                    Intent showTouches = new Intent("com.cyanogenmod.SHOW_TOUCHES");
-                    showTouches.putExtra(SHOW_TOUCHES, "on");
-                    mBuilder.addAction(android.R.drawable.checkbox_off_background, "show touches", PendingIntent.getBroadcast(this, 0, showTouches, PendingIntent.FLAG_UPDATE_CURRENT));
-                } else {
-                    sp.edit().putInt(SHOW_TOUCHES_INIT, 1);
-                }
+                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
+                addNotificationTouchButton(true);
                 timer = new Timer();
                 timer.scheduleAtFixedRate(new TimerTask() {
                     @Override
@@ -156,7 +145,7 @@ public class ScreencastService extends Service {
         else if (intent != null && TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_STOP_SCREENCAST")) {
             try {
                 // clean show_touches settings if user enable show_touches in this activity
-                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, wasShowingTouches ? 1 : 0);
+                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
                 if (!hasAvailableSpace()) {
                     Toast.makeText(this, "Not enough storage space available", Toast.LENGTH_LONG).show();
                     return START_STICKY;

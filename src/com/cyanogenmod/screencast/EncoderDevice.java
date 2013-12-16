@@ -19,11 +19,25 @@ package com.cyanogenmod.screencast;
 import android.content.Context;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
+import android.media.CamcorderProfile;
 import android.media.MediaCodec;
 import android.media.MediaCodecInfo;
 import android.media.MediaFormat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
+
+import org.xml.sax.Attributes;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.StringReader;
+import java.util.ArrayList;
+
+import safesax.Element;
+import safesax.ElementListener;
+import safesax.Parsers;
+import safesax.RootElement;
 
 public abstract class EncoderDevice {
     final String LOGTAG = getClass().getSimpleName();
@@ -110,6 +124,17 @@ public abstract class EncoderDevice {
 
     protected abstract EncoderRunnable onSurfaceCreated(MediaCodec venc);
 
+    private static class VideoEncoderCap {
+        int maxFrameWidth;
+        int maxFrameHeight;
+        int maxBitRate;
+        public VideoEncoderCap(Attributes attributes) {
+            maxFrameWidth = Integer.valueOf(attributes.getValue("maxFrameWidth"));
+            maxFrameHeight = Integer.valueOf(attributes.getValue("maxFrameHeight"));
+            maxBitRate = Integer.valueOf(attributes.getValue("maxBitRate"));
+        }
+    }
+
     public final Surface createDisplaySurface() {
         if (venc != null) {
             // signal any old crap to end
@@ -121,21 +146,94 @@ public abstract class EncoderDevice {
             venc = null;
         }
 
-        // TODO: choose proper bit rate and width/height
-        MediaFormat video = MediaFormat.createVideoFormat("video/avc", width, height);
+        int maxWidth;
+        int maxHeight;
         int bitrate;
-        if (width >= 1080 || height >= 1080)
-            bitrate = 4000000;
-        else
-            bitrate = 2000000;
 
-        bitrate = 6000000;
+        try {
+            File mediaProfiles = new File("/system/etc/media_profiles.xml");
+            FileInputStream fin = new FileInputStream(mediaProfiles);
+            byte[] bytes = new byte[(int)mediaProfiles.length()];
+            fin.read(bytes);
+            String xml = new String(bytes);
+            RootElement root = new RootElement("MediaSettings");
+            Element encoder = root.requireChild("VideoEncoderCap");
+            final ArrayList<VideoEncoderCap> encoders = new ArrayList<VideoEncoderCap>();
+            encoder.setElementListener(new ElementListener() {
+                @Override
+                public void end() {
+                }
+
+                @Override
+                public void start(Attributes attributes) {
+                    if (!TextUtils.equals(attributes.getValue("name"), "h264"))
+                        return;
+                    encoders.add(new VideoEncoderCap(attributes));
+                }
+            });
+            Parsers.parse(new StringReader(xml), root.getContentHandler());
+            if (encoders.size() != 1)
+                throw new Exception("derp");
+
+            VideoEncoderCap v = encoders.get(0);
+            maxWidth = v.maxFrameWidth;
+            maxHeight = v.maxFrameHeight;
+            bitrate = v.maxBitRate;
+        }
+        catch (Exception e) {
+            CamcorderProfile profile = CamcorderProfile.get(CamcorderProfile.QUALITY_1080P);
+
+            if (profile == null)
+                profile = CamcorderProfile.get(CamcorderProfile.QUALITY_720P);
+
+            if (profile == null) {
+                maxWidth = 640;
+                maxHeight = 480;
+                bitrate = 2000000;
+            }
+            else {
+                maxWidth = profile.videoFrameWidth;
+                maxHeight = profile.videoFrameHeight;
+                bitrate = profile.videoBitRate;
+            }
+        }
+
+        int max = Math.max(maxWidth, maxHeight);
+        int min = Math.min(maxWidth, maxHeight);
+
+        // see if we need to resize
+        if (width > height) {
+            if (width > max) {
+                double ratio = (double)max / (double)width;
+                width = max;
+                height = (int)(height * ratio);
+            }
+            if (height > min) {
+                double ratio = (double)min / (double)height;
+                height = min;
+                width = (int)(width * ratio);
+            }
+        }
+        else {
+            if (height > max) {
+                double ratio = (double)max / (double)height;
+                height = max;
+                width = (int)(width * ratio);
+            }
+            if (width > min) {
+                double ratio = (double)min / (double)width;
+                width = min;
+                height = (int)(height * ratio);
+            }
+        }
+
+        MediaFormat video = MediaFormat.createVideoFormat("video/avc", width, height);
 
         video.setInteger(MediaFormat.KEY_BIT_RATE, bitrate);
 
         video.setInteger(MediaFormat.KEY_FRAME_RATE, 30);
         video.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
-        video.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 10);
+        video.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 3);
 
         // create a surface from the encoder
         Log.i(LOGTAG, "Starting encoder");
