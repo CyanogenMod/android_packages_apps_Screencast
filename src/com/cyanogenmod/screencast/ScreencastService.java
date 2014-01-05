@@ -124,6 +124,7 @@ public class ScreencastService extends Service {
 
         assert recorder == null;
         Point size = getNativeResolution();
+        // size = new Point(1080, 1920);
         recorder = new RecordingDevice(this, size.x, size.y);
         VirtualDisplay vd = recorder.registerVirtualDisplay(this, SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
         if (vd == null)

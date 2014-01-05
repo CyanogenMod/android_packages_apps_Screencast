@@ -79,13 +79,19 @@ class RecordingDevice extends EncoderDevice {
         @Override
         public void run() {
             try {
+                if (audio.record.getState() != AudioRecord.STATE_INITIALIZED) {
+                    muxer.start();
+                    return;
+                }
                 encode();
             }
             catch (Exception e) {
                 Log.e(LOGTAG, "Audio Muxer error", e);
             }
-            Log.i(LOGTAG, "AudioMuxer done");
-            muxWaiter.release();
+            finally {
+                Log.i(LOGTAG, "AudioMuxer done");
+                muxWaiter.release();
+            }
         }
 
         void encode() throws Exception {
