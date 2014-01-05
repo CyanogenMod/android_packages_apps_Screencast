@@ -35,7 +35,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.widget.Toast;
+import android.graphics.Point;
 
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
@@ -93,6 +95,27 @@ public class ScreencastService extends Service {
         notificationManager.notify(0, mBuilder.build());
     }
 
+    protected Point getNativeResolution() {
+        DisplayManager dm = (DisplayManager)getSystemService(DISPLAY_SERVICE);
+        Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
+        Point ret = new Point();
+        try {
+            display.getRealSize(ret);
+        }
+        catch (Exception e) {
+            try {
+                Method mGetRawH = Display.class.getMethod("getRawHeight");
+                Method mGetRawW = Display.class.getMethod("getRawWidth");
+                ret.x = (Integer) mGetRawW.invoke(display);
+                ret.y = (Integer) mGetRawH.invoke(display);
+            }
+            catch (Exception ex) {
+                display.getSize(ret);
+            }
+        }
+        return ret;
+    }
+
     void registerScreencaster() throws RemoteException {
         DisplayManager dm = (DisplayManager)getSystemService(DISPLAY_SERVICE);
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
@@ -100,8 +123,9 @@ public class ScreencastService extends Service {
         display.getMetrics(metrics);
 
         assert recorder == null;
-        recorder = new RecordingDevice(this, metrics.widthPixels, metrics.heightPixels);
-        VirtualDisplay vd = recorder.registerVirtualDisplay(this, SCREENCASTER_NAME, metrics.widthPixels, metrics.heightPixels, metrics.densityDpi);
+        Point size = getNativeResolution();
+        recorder = new RecordingDevice(this, size.x, size.y);
+        VirtualDisplay vd = recorder.registerVirtualDisplay(this, SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
         if (vd == null)
             cleanup();
     }
