@@ -79,7 +79,7 @@ public abstract class EncoderDevice {
         { 848, 480 }
     };
 
-    public VirtualDisplay registerVirtualDisplay(Context context, String name, int width, int height, int densityDpi) {
+    public VirtualDisplay registerVirtualDisplay(Context context, String name, int originalWidth, int originalHeight, int densityDpi) {
         assert virtualDisplay == null;
         DisplayManager dm = (DisplayManager)context.getSystemService(Context.DISPLAY_SERVICE);
         Surface surface = createDisplaySurface();
