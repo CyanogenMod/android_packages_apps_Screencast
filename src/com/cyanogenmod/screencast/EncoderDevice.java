@@ -46,6 +46,39 @@ public abstract class EncoderDevice {
     int height;
     private VirtualDisplay virtualDisplay;
 
+    // Standard resolution tables, removed values that aren't multiples of 8
+    private int validResolutions[][] = {
+        // CEA Resolutions
+        { 640, 480 },
+        { 720, 480 },
+        { 720, 576 },
+        { 1280, 720 },
+        { 1920, 1080 },
+        // VESA Resolutions
+        { 800, 600 },
+        { 1024, 768 },
+        { 1152, 864 },
+        { 1280, 768 },
+        { 1280, 800 },
+        { 1360, 768 },
+        { 1366, 768 },
+        { 1280, 1024 },
+        //{ 1400, 1050 },
+        //{ 1440, 900 },
+        //{ 1600, 900 },
+        { 1600, 1200 },
+        //{ 1680, 1024 },
+        //{ 1680, 1050 },
+        { 1920, 1200 },
+        // HH Resolutions
+        { 800, 480 },
+        { 854, 480 },
+        { 864, 480 },
+        { 640, 360 },
+        //{ 960, 540 },
+        { 848, 480 }
+    };
+
     public VirtualDisplay registerVirtualDisplay(Context context, String name, int width, int height, int densityDpi) {
         assert virtualDisplay == null;
         DisplayManager dm = (DisplayManager)context.getSystemService(Context.DISPLAY_SERVICE);
@@ -201,31 +234,56 @@ public abstract class EncoderDevice {
         int max = Math.max(maxWidth, maxHeight);
         int min = Math.min(maxWidth, maxHeight);
 
+        double ratio = 1;
+        boolean landscape = false;
+        boolean resizeNeeded = false;
+
         // see if we need to resize
+
+        // Figure orientation and ratio first
         if (width > height) {
-            if (width > max) {
-                double ratio = (double)max / (double)width;
-                width = max;
-                height = (int)(height * ratio);
-            }
-            if (height > min) {
-                double ratio = (double)min / (double)height;
-                height = min;
-                width = (int)(width * ratio);
+            // landscape
+            landscape = true;
+            ratio = (double)width / (double)height;
+            if (width > max || height > min) {
+                resizeNeeded = true;
             }
         }
         else {
-            if (height > max) {
-                double ratio = (double)max / (double)height;
-                height = max;
-                width = (int)(width * ratio);
-            }
-            if (width > min) {
-                double ratio = (double)min / (double)width;
-                width = min;
-                height = (int)(height * ratio);
+            // portrait
+            ratio = (double)height / (double)width;
+            if (height > max || width > min) {
+                resizeNeeded = true;
             }
         }
+
+        if (resizeNeeded) {
+            boolean matched = false;
+            for (int[] resolution: validResolutions) {
+                // All res are in landscape. Find the highest match
+                if (resolution[0] <= max && resolution[1] <= min &&
+                       (!matched || (resolution[0] > (landscape ? width : height)))
+                   ) {
+                    if (((double)resolution[0] / (double)resolution[1]) == ratio) {
+                        // Got a valid one
+                        if (landscape) {
+                            width = resolution[0];
+                            height = resolution[1];
+                        } else {
+                            height = resolution[0];
+                            width = resolution[1];
+                        }
+                        matched = true;
+                    }
+                }
+            }
+            if (!matched) {
+                // No match found. Go for the lowest... :(
+                width = landscape ? 640 : 480;
+                height = landscape ? 480 : 640;
+            }
+        }
+
 
         MediaFormat video = MediaFormat.createVideoFormat("video/avc", width, height);
 
@@ -236,7 +294,7 @@ public abstract class EncoderDevice {
         video.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 3);
 
         // create a surface from the encoder
-        Log.i(LOGTAG, "Starting encoder");
+        Log.i(LOGTAG, "Starting encoder at " + width + "x" + height);
         venc = MediaCodec.createEncoderByType("video/avc");
         venc.configure(video, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
         Surface surface = venc.createInputSurface();
