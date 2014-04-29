@@ -1,4 +1,4 @@
-package com.cyanogenmod.screencast;
+package org.cyanogenmod.screencast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.screencast;
+package org.cyanogenmod.screencast;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -133,14 +133,14 @@ public class ScreencastService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent != null && "com.cyanogenmod.server.display.SCAN".equals(intent.getAction())) {
+        if (intent != null && "org.cyanogenmod.server.display.SCAN".equals(intent.getAction())) {
 //            registerFlashDevice();
             return START_STICKY;
         }
-        else if (intent != null && "com.cyanogenmod.server.display.STOP_SCAN".equals(intent.getAction())) {
+        else if (intent != null && "org.cyanogenmod.server.display.STOP_SCAN".equals(intent.getAction())) {
            return START_STICKY;
         }
-        else if (intent != null && TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_START_SCREENCAST")) {
+        else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_START_SCREENCAST")) {
             try {
                 if (!hasAvailableSpace()) {
                     Toast.makeText(this, R.string.not_enough_storage, Toast.LENGTH_LONG).show();
@@ -167,7 +167,7 @@ public class ScreencastService extends Service {
                 Log.e("Mirror", "error", e);
             }
         }
-        else if (intent != null && TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_STOP_SCREENCAST")) {
+        else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_STOP_SCREENCAST")) {
             try {
                 // clean show_touches settings if user enable show_touches in this activity
                 Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
@@ -180,7 +180,7 @@ public class ScreencastService extends Service {
             catch (Exception e) {
                 Log.e("Mirror", "error", e);
             }
-        } else if (intent != null && intent.getAction().equals("com.cyanogenmod.SHOW_TOUCHES")) {
+        } else if (intent != null && intent.getAction().equals("org.cyanogenmod.SHOW_TOUCHES")) {
             String showTouchesValue = intent.getStringExtra(SHOW_TOUCHES);
             Intent showTouchesIntent = new Intent("com.cyanogenmod.SHOW_TOUCHES");
             mBuilder = createNotificationBuilder();
@@ -198,7 +198,7 @@ public class ScreencastService extends Service {
     }
 
     private void addNotificationTouchButton(boolean showingTouches) {
-        Intent showTouchesIntent = new Intent("com.cyanogenmod.SHOW_TOUCHES");
+        Intent showTouchesIntent = new Intent("org.cyanogenmod.SHOW_TOUCHES");
         if (showingTouches) {
             Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
             showTouchesIntent.putExtra(SHOW_TOUCHES, "off");
@@ -215,8 +215,8 @@ public class ScreencastService extends Service {
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_stat_device_access_video)
                 .setContentTitle(getString(R.string.recording));
-        Intent stopRecording = new Intent("com.cyanogenmod.ACTION_STOP_SCREENCAST");
-        builder.addAction(R.drawable.stop, "Stop Recording", PendingIntent.getBroadcast(this, 0, stopRecording, 0));
+        Intent stopRecording = new Intent("org.cyanogenmod.ACTION_STOP_SCREENCAST");
+        builder.addAction(R.drawable.stop, getString(R.string.stop), PendingIntent.getBroadcast(this, 0, stopRecording, 0));
         return builder;
     }
 

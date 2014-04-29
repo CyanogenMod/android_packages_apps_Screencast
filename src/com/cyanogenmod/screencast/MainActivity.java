@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.screencast;
+package org.cyanogenmod.screencast;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
         .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startService(new Intent("com.cyanogenmod.ACTION_START_SCREENCAST")
+                startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
                 .setClass(MainActivity.this, ScreencastService.class));
                 finish();
             }

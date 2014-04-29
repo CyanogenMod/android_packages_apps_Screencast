@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.screencast;
+package org.cyanogenmod.screencast;
 
 import android.content.Context;
 import android.hardware.display.DisplayManager;
