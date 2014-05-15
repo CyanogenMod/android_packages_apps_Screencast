@@ -20,7 +20,7 @@
     <string name="stop">Stop</string>
     <string name="insufficient_storage">Insufficient storage</string>
     <string name="show_touches">Show touches</string>
-    <string name="recording">Recording</string>
+    <string name="recording">Recording\u2026</string>
     <string name="recording_ready_to_share">Recording ready to share</string>
     <string name="video_length">Video length: %s</string>
     <string name="not_enough_storage">Not enough storage available</string>
