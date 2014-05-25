@@ -18,7 +18,7 @@
 <resources>
   <string name="app_name">Screencast</string>
   <string name="share">Partager</string>
-  <string name="stop">Stop</string>
+  <string name="stop">Arrêter</string>
   <string name="insufficient_storage">Stockage insuffisant</string>
   <string name="show_touches">Afficher les touchés</string>
   <string name="recording">Enregistrement\u2026</string>
