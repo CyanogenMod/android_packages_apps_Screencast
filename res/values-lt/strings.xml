@@ -25,6 +25,6 @@
   <string name="recording_ready_to_share">Įrašas paruoštas bendrinimui</string>
   <string name="video_length">Vaizdo įrašo trukmė: %s</string>
   <string name="not_enough_storage">Nepakanka atminties</string>
-  <string name="start_screencast">Pradėti „Screencast”</string>
-  <string name="start_description">Paspauskite „Pradėti Screencast” norėdami įrašyti savo „Android” ekrano vaizdą ir garsą iš mikrofono.</string>
+  <string name="start_screencast">Pradėti „Screencast“</string>
+  <string name="start_description">Paspauskite „Pradėti Screencast“ norėdami įrašyti savo „Android“ ekrano vaizdą ir garsą iš mikrofono.</string>
 </resources>
