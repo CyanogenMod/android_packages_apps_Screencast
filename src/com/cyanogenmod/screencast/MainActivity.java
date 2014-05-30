@@ -22,6 +22,8 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends Activity {
+
+    boolean mStarted;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +33,12 @@ public class MainActivity extends Activity {
         .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
-                .setClass(MainActivity.this, ScreencastService.class));
-                finish();
+                if (!mStarted) {
+                    mStarted = true;
+                    startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
+                            .setClass(MainActivity.this, ScreencastService.class));
+                    finish();
+                }
             }
         });
     }
