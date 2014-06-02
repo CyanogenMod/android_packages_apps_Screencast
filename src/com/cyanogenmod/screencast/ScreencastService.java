@@ -46,6 +46,8 @@ import java.util.TimerTask;
 public class ScreencastService extends Service {
     private static final String LOGTAG = "ScreencastService";
     public static final String SCREENCASTER_NAME = "hidden:screen-recording";
+    public static final String PREFS = "preferences";
+    static final String KEY_RECORDING = "recording";
     private long startTime;
     private Timer timer;
     private Notification.Builder mBuilder;
@@ -142,6 +144,7 @@ public class ScreencastService extends Service {
         }
         else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_START_SCREENCAST")) {
             try {
+                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
                 if (!hasAvailableSpace()) {
                     Toast.makeText(this, R.string.not_enough_storage, Toast.LENGTH_LONG).show();
                     return START_STICKY;
@@ -169,6 +172,7 @@ public class ScreencastService extends Service {
         }
         else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_STOP_SCREENCAST")) {
             try {
+                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
                 // clean show_touches settings if user enable show_touches in this activity
                 Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
                 if (!hasAvailableSpace()) {

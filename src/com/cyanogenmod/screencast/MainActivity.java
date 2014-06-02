@@ -20,26 +20,60 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    boolean mStarted;
+    Button mStartScreencastButton;
+    Button mStopScreencastButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        findViewById(R.id.start_screencast)
-        .setOnClickListener(new View.OnClickListener() {
+        mStartScreencastButton = (Button) findViewById(R.id.start_screencast);
+        mStartScreencastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!mStarted) {
-                    mStarted = true;
-                    startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
-                            .setClass(MainActivity.this, ScreencastService.class));
-                    finish();
-                }
+                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
+                startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
+                        .setClass(MainActivity.this, ScreencastService.class));
+                finish();
             }
         });
+
+        mStopScreencastButton = (Button) findViewById(R.id.stop_screencast);
+        mStopScreencastButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
+                startService(new Intent("org.cyanogenmod.ACTION_STOP_SCREENCAST")
+                        .setClass(MainActivity.this, ScreencastService.class));
+                refreshState();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshState();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        refreshState();
+    }
+
+    private void refreshState() {
+        final boolean recording = getSharedPreferences(ScreencastService.PREFS, 0).getBoolean(ScreencastService.KEY_RECORDING, false);
+        if (mStartScreencastButton != null) {
+            mStartScreencastButton.setEnabled(!recording);
+        }
+        if (mStopScreencastButton != null) {
+            mStopScreencastButton.setEnabled(recording);
+        }
     }
 }
