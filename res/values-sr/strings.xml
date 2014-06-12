@@ -17,7 +17,7 @@
 -->
 <resources>
   <string name="app_name">Снимање-екрана</string>
-  <string name="share">Делите</string>
+  <string name="share">Дели</string>
   <string name="stop">Заустави</string>
   <string name="insufficient_storage">Недовољно простора</string>
   <string name="show_touches">Прикажи додире</string>
@@ -26,5 +26,5 @@
   <string name="video_length">Дужина видеа: %s</string>
   <string name="not_enough_storage">Нема довољно доступног простора</string>
   <string name="start_screencast">Почни Снимање-екрана</string>
-  <string name="start_description">Притисните \"Почни Снимање-екрана\" да би сте започели снимање Вашег Андроид екрана и микрофона.</string>
+  <string name="start_description">Притисни \"Почни Снимање-екрана\" да би започео снимање твог Андроид екрана и микрофона.</string>
 </resources>
