@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Distribuire ecran</string>
   <string name="share">Distribuie</string>
   <string name="stop">Oprire</string>
   <string name="insufficient_storage">Capacitate de stocare insuficientă</string>
