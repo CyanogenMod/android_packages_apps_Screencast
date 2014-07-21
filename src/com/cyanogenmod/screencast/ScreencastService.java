@@ -142,7 +142,9 @@ public class ScreencastService extends Service {
         else if (intent != null && "org.cyanogenmod.server.display.STOP_SCAN".equals(intent.getAction())) {
            return START_STICKY;
         }
-        else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_START_SCREENCAST")) {
+        else if (intent != null && (TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_START_SCREENCAST")
+                 || TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_START_SCREENCAST"))
+                ) {
             try {
                 getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
                 if (!hasAvailableSpace()) {

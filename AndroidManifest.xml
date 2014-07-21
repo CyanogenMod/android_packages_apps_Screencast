@@ -42,6 +42,7 @@
         <receiver android:name=".ScreencastStartReceiver" android:permission="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT">
             <intent-filter>
                 <action android:name="org.cyanogenmod.ACTION_START_SCREENCAST" />
+                <action android:name="com.cyanogenmod.ACTION_START_SCREENCAST" />
             </intent-filter>
         </receiver>
         <receiver android:name=".ScreencastControlReceiver">
