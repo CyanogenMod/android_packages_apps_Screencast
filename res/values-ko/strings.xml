@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
+  <string name="app_name">스크린캐스트</string>
   <string name="share">공유</string>
   <string name="stop">중지</string>
   <string name="insufficient_storage">저장소 부족</string>
@@ -25,6 +25,6 @@
   <string name="recording_ready_to_share">녹화를 공유할 준비가 되었습니다</string>
   <string name="video_length">비디오 길이: %s</string>
   <string name="not_enough_storage">저장소가 충분하지 않습니다</string>
-  <string name="start_screencast">Screencast 시작</string>
-  <string name="start_description">\"Screencast 시작\" 버튼을 눌러 Android 화면과 마이크로폰 녹화를 시작합니다.</string>
+  <string name="start_screencast">스크린캐스트 시작</string>
+  <string name="start_description">\"스크린캐스트 시작\" 버튼을 눌러 Android 화면과 마이크로폰 녹화를 시작합니다.</string>
 </resources>
