@@ -30,6 +30,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -132,7 +133,11 @@ class RecordingDevice extends EncoderDevice {
         MediaCodec codec;
         MediaFormat format;
         public AudioRecorder(Recorder recorder) {
-            codec = MediaCodec.createEncoderByType("audio/mp4a-latm");
+            try {
+                codec = MediaCodec.createEncoderByType("audio/mp4a-latm");
+            } catch (IOException e) {
+                Log.wtf(LOGTAG, "Can't create encoder!", e);
+            }
             format = new MediaFormat();
             format.setString(MediaFormat.KEY_MIME, "audio/mp4a-latm");
             format.setInteger(MediaFormat.KEY_BIT_RATE, 64 * 1024);

@@ -31,6 +31,7 @@ import org.xml.sax.Attributes;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 
@@ -295,7 +296,11 @@ public abstract class EncoderDevice {
 
         // create a surface from the encoder
         Log.i(LOGTAG, "Starting encoder at " + width + "x" + height);
-        venc = MediaCodec.createEncoderByType("video/avc");
+        try {
+            venc = MediaCodec.createEncoderByType("video/avc");
+        } catch (IOException e) {
+            Log.wtf(LOGTAG, "Can't create AVC encoder!", e);
+        }
         venc.configure(video, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
         Surface surface = venc.createInputSurface();
         venc.start();
