@@ -45,6 +45,7 @@ public abstract class EncoderDevice {
     private MediaCodec venc;
     int width;
     int height;
+    Context context;
     private VirtualDisplay virtualDisplay;
 
     // Standard resolution tables, removed values that aren't multiples of 8
@@ -89,7 +90,8 @@ public abstract class EncoderDevice {
         return virtualDisplay = dm.createVirtualDisplay(name, width, height, 1, surface, DisplayManager.VIRTUAL_DISPLAY_FLAG_PUBLIC | DisplayManager.VIRTUAL_DISPLAY_FLAG_SECURE);
     }
 
-    public EncoderDevice(int width, int height) {
+    public EncoderDevice(Context context, int width, int height) {
+        this.context = context;
         this.width = width;
         this.height = height;
     }
@@ -234,6 +236,8 @@ public abstract class EncoderDevice {
 
         int max = Math.max(maxWidth, maxHeight);
         int min = Math.min(maxWidth, maxHeight);
+        int resConstraint = context.getResources().getInteger(
+                    R.integer.config_maxDimension);
 
         double ratio = 1;
         boolean landscape = false;
@@ -246,6 +250,9 @@ public abstract class EncoderDevice {
             // landscape
             landscape = true;
             ratio = (double)width / (double)height;
+            if (resConstraint >= 0 && height > resConstraint) {
+                min = resConstraint;
+            }
             if (width > max || height > min) {
                 resizeNeeded = true;
             }
@@ -253,6 +260,9 @@ public abstract class EncoderDevice {
         else {
             // portrait
             ratio = (double)height / (double)width;
+            if (resConstraint >= 0 && width > resConstraint) {
+                min = resConstraint;
+            }
             if (height > max || width > min) {
                 resizeNeeded = true;
             }

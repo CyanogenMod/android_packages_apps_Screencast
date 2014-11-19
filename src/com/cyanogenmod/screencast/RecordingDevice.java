@@ -40,11 +40,9 @@ class RecordingDevice extends EncoderDevice {
     private static final String LOGTAG = "RecordingDevice";
     private static final File RECORDINGS_DIR = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES), "Screencasts");
     File path;
-    Context context;
 
     public RecordingDevice(Context context, int width, int height) {
-        super(width, height);
-        this.context = context;
+        super(context, width, height);
         // Prepare all the output metadata
         String videoDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date(System.currentTimeMillis()));
         // the directory which holds all recording files
