@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.cyanogenmod.screencast"
-          android:versionCode="1002"
-          android:versionName="1.0.0.2"
-          android:sharedUserId="org.cyanogenmod.uid.cms">
-    <uses-sdk android:minSdkVersion="19"/>
+          android:versionCode="1003"
+          android:versionName="1.0.0.3">
+    <uses-sdk android:minSdkVersion="21"/>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -30,7 +29,7 @@
             </intent-filter>
         </service>
         <activity
-                android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+                android:theme="@android:style/Theme.Material.Dialog.NoActionBar"
                 android:name=".MainActivity"
                 android:launchMode="singleTask"
                 android:label="@string/app_name">
