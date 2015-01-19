@@ -26,5 +26,5 @@
   <string name="video_length">Тривалість відео: %s</string>
   <string name="not_enough_storage">Недостатньо пам\'яті</string>
   <string name="start_screencast">Почати запис</string>
-  <string name="start_description">Натисніть \"Почати запис\", щоб розпочати запис відео з екрана пристрою і мікрофона.</string>
+  <string name="start_description">Натисніть «Почати запис», щоб розпочати запис відео з екрана пристрою і мікрофона.</string>
 </resources>
