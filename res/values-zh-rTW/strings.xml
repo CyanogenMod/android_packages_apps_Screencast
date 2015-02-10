@@ -24,7 +24,7 @@
   <string name="recording">正在錄製\u2026</string>
   <string name="recording_ready_to_share">錄製內容已準備好分享</string>
   <string name="video_length">影片長度：%s</string>
-  <string name="not_enough_storage">可用儲存空間不足</string>
+  <string name="not_enough_storage">可用的儲存空間不足</string>
   <string name="start_screencast">開始 Screencast</string>
   <string name="start_description">按下「開始 Screencast」即可開始錄製您 Android 的螢幕及麥克風的影片</string>
 </resources>
