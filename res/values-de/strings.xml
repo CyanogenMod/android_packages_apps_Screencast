@@ -18,7 +18,7 @@
 <resources>
   <string name="app_name">Bildschirmaufnahme</string>
   <string name="share">Teilen</string>
-  <string name="stop">Stop</string>
+  <string name="stop">Stoppen</string>
   <string name="insufficient_storage">Zu wenig Speicher</string>
   <string name="show_touches">Berührungen anzeigen</string>
   <string name="recording">Aufnahme\u2026</string>
