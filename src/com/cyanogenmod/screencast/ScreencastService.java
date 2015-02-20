@@ -20,8 +20,10 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
 import android.net.Uri;
@@ -54,6 +56,16 @@ public class ScreencastService extends Service {
     RecordingDevice recorder;
 
     private static final String SHOW_TOUCHES = "show_touches";
+
+    private BroadcastReceiver mUserSwitchReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(Intent.ACTION_USER_BACKGROUND)) {
+                context.startService(new Intent("com.cyngn.ACTION_STOP_SCREENCAST")
+                        .setClass(context, ScreencastService.class));
+            }
+        }
+    };
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -167,6 +179,9 @@ public class ScreencastService extends Service {
                         updateNotification(ScreencastService.this);
                     }
                 }, 100, 1000);
+                IntentFilter filter = new IntentFilter();
+                filter.addAction(Intent.ACTION_USER_BACKGROUND);
+                registerReceiver(mUserSwitchReceiver, filter);
             }
             catch (Exception e) {
                 Log.e("Mirror", "error", e);
@@ -174,6 +189,7 @@ public class ScreencastService extends Service {
         }
         else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_STOP_SCREENCAST")) {
             try {
+                unregisterReceiver(mUserSwitchReceiver);
                 getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
                 // clean show_touches settings if user enable show_touches in this activity
                 Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
