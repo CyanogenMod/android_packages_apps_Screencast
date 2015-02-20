@@ -39,6 +39,7 @@ import android.view.Display;
 import android.widget.Toast;
 import android.graphics.Point;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -257,7 +258,7 @@ public class ScreencastService extends Service {
         sharingIntent.setType("video/mp4");
         Uri uri = Uri.parse("file://" + file);
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, file);
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, new File(file).getName());
         Intent chooserIntent = Intent.createChooser(sharingIntent, null);
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         long timeElapsed = System.currentTimeMillis() - startTime;
