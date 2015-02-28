@@ -26,5 +26,5 @@
   <string name="video_length">אורך וידאו: %s</string>
   <string name="not_enough_storage">אין מספיק מקום אחסון זמין</string>
   <string name="start_screencast">התחל שידור</string>
-  <string name="start_description">לחץ על \"התחל שידור מסך\" כדי להתחיל בהקלטת וידאו של המסך שלך והמיקרופון שלך.</string>
+  <string name="start_description">לחץ על \"התחל שידור מסך\" כדי להתחיל בהקלטת וידאו של המסך והמיקרופון שלך.</string>
 </resources>
