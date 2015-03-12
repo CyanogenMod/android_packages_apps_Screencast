@@ -31,8 +31,10 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.StatFs;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -41,8 +43,6 @@ import android.graphics.Point;
 
 import java.io.File;
 import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -102,9 +102,9 @@ public class ScreencastService extends Service {
     }
 
     public void updateNotification(Context context) {
-        long timeElapsed = System.currentTimeMillis() - startTime;
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-        mBuilder.setContentText("Video Length : " + sdf.format(new Date(timeElapsed)));
+        long timeElapsed = SystemClock.elapsedRealtime() - startTime;
+        mBuilder.setContentText(getString(R.string.video_length,
+                DateUtils.formatElapsedTime(timeElapsed / 1000)));
         NotificationManager notificationManager =
         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(0, mBuilder.build());
@@ -164,11 +164,7 @@ public class ScreencastService extends Service {
                     Toast.makeText(this, R.string.not_enough_storage, Toast.LENGTH_LONG).show();
                     return START_STICKY;
                 }
-                DisplayManager displayManager = (DisplayManager)getSystemService(Context.DISPLAY_SERVICE);
-                Display display = displayManager.getDisplay(Display.DEFAULT_DISPLAY);
-                Point size = new Point();
-                display.getSize(size);
-                startTime = System.currentTimeMillis();
+                startTime = SystemClock.elapsedRealtime();
                 registerScreencaster();
                 mBuilder = createNotificationBuilder();
                 Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
@@ -261,8 +257,7 @@ public class ScreencastService extends Service {
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, new File(file).getName());
         Intent chooserIntent = Intent.createChooser(sharingIntent, null);
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        long timeElapsed = System.currentTimeMillis() - startTime;
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
+        long timeElapsed = SystemClock.elapsedRealtime() - startTime;
 
         Log.i(LOGTAG, "Video complete: " + uri);
 
@@ -275,7 +270,8 @@ public class ScreencastService extends Service {
         .setWhen(System.currentTimeMillis())
         .setSmallIcon(R.drawable.ic_stat_device_access_video)
         .setContentTitle(getString(R.string.recording_ready_to_share))
-        .setContentText(getString(R.string.video_length, sdf.format(new Date(timeElapsed))))
+        .setContentText(getString(R.string.video_length,
+                DateUtils.formatElapsedTime(timeElapsed / 1000)))
         .addAction(android.R.drawable.ic_menu_share, getString(R.string.share),
                 PendingIntent.getActivity(this, 0, chooserIntent, PendingIntent.FLAG_CANCEL_CURRENT))
         .setContentIntent(contentIntent);
