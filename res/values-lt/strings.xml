@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Ekrano perdavimas</string>
+  <string name="app_name">Perdavimo ekranas</string>
   <string name="share">Bendrinti</string>
   <string name="stop">Sustabdyti</string>
   <string name="insufficient_storage">Nepakanka atminties</string>
@@ -25,6 +25,6 @@
   <string name="recording_ready_to_share">Įrašas paruoštas bendrinimui</string>
   <string name="video_length">Vaizdo įrašo trukmė: %s</string>
   <string name="not_enough_storage">Nepakanka atminties</string>
-  <string name="start_screencast">Pradėti ekrano perdavimą</string>
-  <string name="start_description">Paspauskite „Pradėti ekrano perdavimą“, kad įrašytumėte savo „Android“ ekrano vaizdą ir mikrofono garsą.</string>
+  <string name="start_screencast">Pradėti perdavimo ekraną</string>
+  <string name="start_description">Paspauskite „Pradėti perdavimo ekraną“, kad įrašytumėte savo „Android“ ekrano vaizdą ir mikrofono garsą.</string>
 </resources>
