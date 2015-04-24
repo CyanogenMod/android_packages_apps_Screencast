@@ -54,7 +54,10 @@ public class ScreencastService extends Service {
     private long startTime;
     private Timer timer;
     private Notification.Builder mBuilder;
-    RecordingDevice recorder;
+    RecordingDevice mRecorder;
+
+    private static final String ACTION_START_SCREENCAST = "org.cyanogenmod.ACTION_START_SCREENCAST";
+    private static final String ACTION_STOP_SCREENCAST = "org.cyanogenmod.ACTION_STOP_SCREENCAST";
 
     private static final String SHOW_TOUCHES = "show_touches";
 
@@ -62,7 +65,7 @@ public class ScreencastService extends Service {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Intent.ACTION_USER_BACKGROUND)) {
-                context.startService(new Intent("com.cyngn.ACTION_STOP_SCREENCAST")
+                context.startService(new Intent(ACTION_STOP_SCREENCAST)
                         .setClass(context, ScreencastService.class));
             }
         }
@@ -74,23 +77,35 @@ public class ScreencastService extends Service {
     }
 
     void cleanup() {
-        if (recorder != null) {
-            recorder.stop();
-            sendShareNotification();
-            recorder = null;
+        String recorderPath = null;
+        if (mRecorder != null) {
+            recorderPath = mRecorder.getRecordingFilePath();
+            mRecorder.stop();
+            mRecorder = null;
         }
         if (timer != null) {
             timer.cancel();
             timer = null;
         }
+        stopForeground(true);
+        if (recorderPath != null) {
+            sendShareNotification(recorderPath);
+        }
+    }
+
+    @Override
+    public void onCreate() {
+        stopCasting();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_USER_BACKGROUND);
+        registerReceiver(mUserSwitchReceiver, filter);
+        super.onCreate();
     }
 
     @Override
     public void onDestroy() {
-        cleanup();
-        NotificationManager notificationManager =
-        (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancelAll();
+        stopCasting();
+        unregisterReceiver(mUserSwitchReceiver);
         super.onDestroy();
     }
 
@@ -105,9 +120,7 @@ public class ScreencastService extends Service {
         long timeElapsed = SystemClock.elapsedRealtime() - startTime;
         mBuilder.setContentText(getString(R.string.video_length,
                 DateUtils.formatElapsedTime(timeElapsed / 1000)));
-        NotificationManager notificationManager =
-        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0, mBuilder.build());
+        startForeground(1, mBuilder.build());
     }
 
     protected Point getNativeResolution() {
@@ -137,38 +150,51 @@ public class ScreencastService extends Service {
         DisplayMetrics metrics = new DisplayMetrics();
         display.getMetrics(metrics);
 
-        assert recorder == null;
+        assert mRecorder == null;
         Point size = getNativeResolution();
         // size = new Point(1080, 1920);
-        recorder = new RecordingDevice(this, size.x, size.y);
-        VirtualDisplay vd = recorder.registerVirtualDisplay(this, SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
+        mRecorder = new RecordingDevice(this, size.x, size.y);
+        VirtualDisplay vd = mRecorder.registerVirtualDisplay(this,
+                SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
         if (vd == null)
             cleanup();
     }
 
+    private void stopCasting() {
+        getSharedPreferences(ScreencastService.PREFS, 0)
+                .edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
+        // clean show_touches settings if user enable show_touches in this activity
+        Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
+        cleanup();
+
+        if (!hasAvailableSpace()) {
+            Toast.makeText(this, R.string.insufficient_storage, Toast.LENGTH_LONG).show();
+        }
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent != null && "org.cyanogenmod.server.display.SCAN".equals(intent.getAction())) {
-//            registerFlashDevice();
+        if (intent == null) {
+            return START_NOT_STICKY;
+        }
+        if ("org.cyanogenmod.server.display.SCAN".equals(intent.getAction())) {
             return START_STICKY;
-        }
-        else if (intent != null && "org.cyanogenmod.server.display.STOP_SCAN".equals(intent.getAction())) {
+        } else if ("org.cyanogenmod.server.display.STOP_SCAN".equals(intent.getAction())) {
            return START_STICKY;
-        }
-        else if (intent != null && (TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_START_SCREENCAST")
-                 || TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_START_SCREENCAST"))
+        } else if (TextUtils.equals(intent.getAction(), ACTION_START_SCREENCAST)
+                 || TextUtils.equals(intent.getAction(), "com.cyanogenmod.ACTION_START_SCREENCAST")
                 ) {
             try {
-                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
                 if (!hasAvailableSpace()) {
                     Toast.makeText(this, R.string.not_enough_storage, Toast.LENGTH_LONG).show();
-                    return START_STICKY;
+                    return START_NOT_STICKY;
                 }
                 startTime = SystemClock.elapsedRealtime();
                 registerScreencaster();
                 mBuilder = createNotificationBuilder();
                 Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
                 addNotificationTouchButton(true);
+
                 timer = new Timer();
                 timer.scheduleAtFixedRate(new TimerTask() {
                     @Override
@@ -176,56 +202,42 @@ public class ScreencastService extends Service {
                         updateNotification(ScreencastService.this);
                     }
                 }, 100, 1000);
-                IntentFilter filter = new IntentFilter();
-                filter.addAction(Intent.ACTION_USER_BACKGROUND);
-                registerReceiver(mUserSwitchReceiver, filter);
+
+                getSharedPreferences(ScreencastService.PREFS, 0)
+                        .edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
+                return START_STICKY;
             }
             catch (Exception e) {
                 Log.e("Mirror", "error", e);
             }
-        }
-        else if (intent != null && TextUtils.equals(intent.getAction(), "org.cyanogenmod.ACTION_STOP_SCREENCAST")) {
-            try {
-                unregisterReceiver(mUserSwitchReceiver);
-                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
-                // clean show_touches settings if user enable show_touches in this activity
-                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
-                if (!hasAvailableSpace()) {
-                    Toast.makeText(this, "Not enough storage space available", Toast.LENGTH_LONG).show();
-                    return START_STICKY;
-                }
-                cleanup();
-            }
-            catch (Exception e) {
-                Log.e("Mirror", "error", e);
-            }
-        } else if (intent != null && intent.getAction().equals("org.cyanogenmod.SHOW_TOUCHES")) {
+        } else if (TextUtils.equals(intent.getAction(), ACTION_STOP_SCREENCAST)) {
+            stopCasting();
+        } else if (intent.getAction().equals("org.cyanogenmod.SHOW_TOUCHES")) {
             String showTouchesValue = intent.getStringExtra(SHOW_TOUCHES);
-            Intent showTouchesIntent = new Intent("com.cyanogenmod.SHOW_TOUCHES");
             mBuilder = createNotificationBuilder();
-            if ("on".equals(showTouchesValue)) {
-                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
-                showTouchesIntent.putExtra(SHOW_TOUCHES, "off");
-                mBuilder.addAction(android.R.drawable.checkbox_on_background, "show touches", PendingIntent.getBroadcast(this, 0, showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
-            } else {
-                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
-                showTouchesIntent.putExtra(SHOW_TOUCHES, "on");
-                mBuilder.addAction(android.R.drawable.checkbox_off_background, "show touches", PendingIntent.getBroadcast(this, 0, showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
-            }
+            addNotificationTouchButton("on".equals(showTouchesValue));
+            return START_STICKY;
         }
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     private void addNotificationTouchButton(boolean showingTouches) {
         Intent showTouchesIntent = new Intent("org.cyanogenmod.SHOW_TOUCHES");
+        showTouchesIntent.setClass(this, ScreencastService.class);
         if (showingTouches) {
             Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
             showTouchesIntent.putExtra(SHOW_TOUCHES, "off");
-            mBuilder.addAction(R.drawable.ic_stat_rating_important, getString(R.string.show_touches), PendingIntent.getBroadcast(this, 0, showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            mBuilder.addAction(R.drawable.ic_stat_rating_important,
+                    getString(R.string.show_touches),
+                    PendingIntent.getService(this, 0,
+                            showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
         } else {
             Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
             showTouchesIntent.putExtra(SHOW_TOUCHES, "on");
-            mBuilder.addAction(R.drawable.ic_stat_rating_not_important, getString(R.string.show_touches), PendingIntent.getBroadcast(this, 0, showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+            mBuilder.addAction(R.drawable.ic_stat_rating_not_important,
+                    getString(R.string.show_touches),
+                    PendingIntent.getService(this, 0,
+                            showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
         }
     }
 
@@ -234,14 +246,14 @@ public class ScreencastService extends Service {
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.ic_stat_device_access_video)
                 .setContentTitle(getString(R.string.recording));
-        Intent stopRecording = new Intent("org.cyanogenmod.ACTION_STOP_SCREENCAST");
-        builder.addAction(R.drawable.stop, getString(R.string.stop), PendingIntent.getBroadcast(this, 0, stopRecording, 0));
+        Intent stopRecording = new Intent(ACTION_STOP_SCREENCAST);
+        stopRecording.setClass(this, ScreencastService.class);
+        builder.addAction(R.drawable.stop, getString(R.string.stop),
+                PendingIntent.getService(this, 0, stopRecording, 0));
         return builder;
     }
 
-    private void sendShareNotification() {
-        if (recorder == null) return;
-        String recordingFilePath = recorder.getRecordingFilePath();
+    private void sendShareNotification(String recordingFilePath) {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         // share the screencast file
@@ -264,7 +276,8 @@ public class ScreencastService extends Service {
         Intent open = new Intent(Intent.ACTION_VIEW);
         open.setDataAndType(uri, "video/mp4");
         open.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, open, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent contentIntent =
+                PendingIntent.getActivity(this, 0, open, PendingIntent.FLAG_CANCEL_CURRENT);
 
         Notification.Builder builder = new Notification.Builder(this)
         .setWhen(System.currentTimeMillis())
