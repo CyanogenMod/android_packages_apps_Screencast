@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast-a</string>
+  <string name="app_name">Igorri pantaila</string>
   <string name="share">Partekatu</string>
   <string name="stop">Gelditu</string>
   <string name="insufficient_storage">Ez dago biltegiratze nahikorik</string>
@@ -24,6 +24,6 @@
   <string name="recording_ready_to_share">Grabazioa partekatzeko prest dago</string>
   <string name="video_length">Bideo luzera: %s</string>
   <string name="not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
-  <string name="start_screencast">Screencast-a hasi</string>
-  <string name="start_description">Sakatu \u00ABScreencast-a hasi\u00BB Android-aren mikrofonoa eta pantailaren bideoa grabatzen hasteko.</string>
+  <string name="start_screencast">Hasi pantaila igortzen</string>
+  <string name="start_description">Sakatu \"Hasi pantaila igortzen\" Android gailuaren pantaila eta mikrofonoaren bideoa grabatzen hasteko.</string>
 </resources>
