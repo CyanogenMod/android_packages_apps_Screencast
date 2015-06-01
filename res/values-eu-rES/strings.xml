@@ -20,6 +20,7 @@
   <string name="share">Partekatu</string>
   <string name="stop">Gelditu</string>
   <string name="insufficient_storage">Ez dago biltegiratze nahikorik</string>
+  <string name="show_touches">Erakutsi ukipenak</string>
   <string name="recording">Grabatzen\u2026</string>
   <string name="recording_ready_to_share">Grabazioa partekatzeko prest dago</string>
   <string name="video_length">Bideo luzera: %s</string>
