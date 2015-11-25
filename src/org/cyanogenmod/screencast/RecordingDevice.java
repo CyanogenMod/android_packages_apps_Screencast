@@ -210,7 +210,11 @@ class RecordingDevice extends EncoderDevice {
 
         @Override
         public void encode() throws Exception {
-            path.getParentFile().mkdirs();
+            File recordingDir = path.getParentFile();
+            recordingDir.mkdirs();
+            if (!(recordingDir.exists() && recordingDir.canWrite())) {
+                throw new SecurityException("Cannot write to " + recordingDir);
+            }
             MediaMuxer muxer = new MediaMuxer(path.getAbsolutePath(), MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
             boolean muxerStarted = false;
             int trackIndex = -1;
