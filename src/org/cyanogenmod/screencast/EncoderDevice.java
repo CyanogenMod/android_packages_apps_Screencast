@@ -154,7 +154,7 @@ public abstract class EncoderDevice {
                 Log.e(LOGTAG, "Encoder error", e);
             }
             cleanup();
-            Log.i(LOGTAG, "=======ENCODING COMPELTE=======");
+            Log.i(LOGTAG, "=======ENCODING COMPLETE=======");
         }
     }
 
