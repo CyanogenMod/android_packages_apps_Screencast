@@ -16,10 +16,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="share">Udostępnij</string>
-  <string name="stop">Zatrzymaj</string>
-  <string name="insufficient_storage">Za mało pamięci</string>
-  <string name="recording">Nagrywanie\u2026</string>
-  <string name="recording_ready_to_share">Nagranie gotowe do udostępnienia</string>
-  <string name="video_length">Długość wideo: %s</string>
+  <string name="app_name">Quay video màn hình</string>
+  <string name="start_screencast">Bắt đầu quay video màn hình</string>
+  <string name="start_description">Nhấn \"Bắt đầu quay video màn hình\" để bắt đầu quay video cho màn hình và micrô Android của bạn.</string>
 </resources>
