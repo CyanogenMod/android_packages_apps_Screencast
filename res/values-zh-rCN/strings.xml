@@ -26,5 +26,5 @@
   <string name="video_length">视频长度: %s</string>
   <string name="not_enough_storage">可用存储空间不足</string>
   <string name="start_screencast">开始屏幕录像</string>
-  <string name="start_description">按“开始屏幕录像”录制 Android 屏幕和麦克风的视频。</string>
+  <string name="start_description">按下“开始屏幕录像”按钮来录制屏幕和麦克风。</string>
 </resources>
