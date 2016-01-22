@@ -18,19 +18,71 @@ package org.cyanogenmod.screencast;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+
+import android.Manifest;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
     Button mStartScreencastButton;
     Button mStopScreencastButton;
+    Button mSettingsButton;
+    TextView mStartDescription;
+    View mNoAudioWarning;
+
+    boolean mHasAudioPermission = false;
+
+    private static final int REQUEST_AUDIO_PERMS = 654;
+
+    private boolean hasPermissions() {
+        int res = checkCallingOrSelfPermission(Manifest.permission.RECORD_AUDIO);
+        return (res == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestNecessaryPermissions() {
+        String[] permissions = new String[] {
+                Manifest.permission.RECORD_AUDIO,
+        };
+        requestPermissions(permissions, REQUEST_AUDIO_PERMS);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                                           int[] grantResults) {
+        boolean allowed = true;
+        switch (requestCode) {
+            case REQUEST_AUDIO_PERMS:
+                for (int res : grantResults) {
+                    allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
+                }
+                break;
+            default:
+                allowed = false;
+                break;
+        }
+        mHasAudioPermission = allowed;
+        refreshState();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        if (!hasPermissions()) {
+            requestNecessaryPermissions();
+        } else {
+            mHasAudioPermission = true;
+        }
+
+        mStartDescription = (TextView) findViewById(R.id.start_description);
+        mNoAudioWarning = findViewById(R.id.no_audio_warning);
 
         mStartScreencastButton = (Button) findViewById(R.id.start_screencast);
         mStartScreencastButton.setOnClickListener(new View.OnClickListener() {
@@ -53,11 +105,20 @@ public class MainActivity extends Activity {
                 refreshState();
             }
         });
+
+        mSettingsButton = (Button) findViewById(R.id.settings);
+        mSettingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSettings();
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        mHasAudioPermission = hasPermissions();
         refreshState();
     }
 
@@ -75,5 +136,31 @@ public class MainActivity extends Activity {
         if (mStopScreencastButton != null) {
             mStopScreencastButton.setEnabled(recording);
         }
+
+        int visibility =  mHasAudioPermission ? View.GONE : View.VISIBLE;
+        if (mSettingsButton != null) {
+            mSettingsButton.setVisibility(visibility);
+        }
+        if (mNoAudioWarning != null) {
+            mNoAudioWarning.setVisibility(visibility);
+        }
+
+        if (mStartDescription != null) {
+            mStartDescription.setText(
+                mHasAudioPermission
+                    ? R.string.start_description
+                    : R.string.start_description_no_audio
+            );
+        }
+    }
+
+    private void goToSettings() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setData(Uri.parse("package:" + getPackageName()));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        startActivity(intent);
     }
 }
