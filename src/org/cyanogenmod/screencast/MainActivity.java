@@ -18,19 +18,56 @@ package org.cyanogenmod.screencast;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import android.Manifest;
 
 public class MainActivity extends Activity {
 
     Button mStartScreencastButton;
     Button mStopScreencastButton;
 
+    private static final int REQUEST_AUDIO_PERMS = 654;
+
+    private boolean hasPermissions() {
+        int res = checkCallingOrSelfPermission(Manifest.permission.RECORD_AUDIO);
+        return (res == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestNecessaryPermissions() {
+        String[] permissions = new String[] {
+                Manifest.permission.RECORD_AUDIO,
+        };
+        requestPermissions(permissions, REQUEST_AUDIO_PERMS);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            int[] grandResults) {
+        boolean allowed = true;
+        switch (requestCode) {
+            case REQUEST_AUDIO_PERMS:
+                for (int res : grandResults) {
+                    allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
+                }
+                break;
+            default:
+                allowed = false;
+                break;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        if (!hasPermissions()) {
+            requestNecessaryPermissions();
+        }
 
         mStartScreencastButton = (Button) findViewById(R.id.start_screencast);
         mStartScreencastButton.setOnClickListener(new View.OnClickListener() {
