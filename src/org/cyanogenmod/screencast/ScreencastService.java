@@ -227,14 +227,14 @@ public class ScreencastService extends Service {
         if (showingTouches) {
             Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
             showTouchesIntent.putExtra(SHOW_TOUCHES, "off");
-            mBuilder.addAction(R.drawable.ic_stat_rating_important,
-                    getString(R.string.show_touches),
+            mBuilder.addAction(R.drawable.ic_touch_off,
+                    getString(R.string.hide_touches),
                     PendingIntent.getService(this, 0,
                             showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
         } else {
             Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
             showTouchesIntent.putExtra(SHOW_TOUCHES, "on");
-            mBuilder.addAction(R.drawable.ic_stat_rating_not_important,
+            mBuilder.addAction(R.drawable.ic_touch,
                     getString(R.string.show_touches),
                     PendingIntent.getService(this, 0,
                             showTouchesIntent, PendingIntent.FLAG_UPDATE_CURRENT));
@@ -285,7 +285,7 @@ public class ScreencastService extends Service {
         .setContentTitle(getString(R.string.recording_ready_to_share))
         .setContentText(getString(R.string.video_length,
                 DateUtils.formatElapsedTime(timeElapsed / 1000)))
-        .addAction(android.R.drawable.ic_menu_share, getString(R.string.share),
+        .addAction(R.drawable.ic_share, getString(R.string.share),
                 PendingIntent.getActivity(this, 0, chooserIntent, PendingIntent.FLAG_CANCEL_CURRENT))
         .setContentIntent(contentIntent);
         return builder;

@@ -16,41 +16,50 @@
 
 package org.cyanogenmod.screencast;
 
+import android.Manifest;
+import android.animation.Animator;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    Button mStartScreencastButton;
-    Button mStopScreencastButton;
+    private ImageButton mScreencastButton;
+    private TextView mText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        mStartScreencastButton = (Button) findViewById(R.id.start_screencast);
-        mStartScreencastButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
-                startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
-                        .setClass(MainActivity.this, ScreencastService.class));
-                finish();
-            }
-        });
+        mScreencastButton = (ImageButton) findViewById(R.id.screencast);
+        mText = (TextView) findViewById(R.id.hint);
 
-        mStopScreencastButton = (Button) findViewById(R.id.stop_screencast);
-        mStopScreencastButton.setOnClickListener(new View.OnClickListener() {
+        mScreencastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
-                startService(new Intent("org.cyanogenmod.ACTION_STOP_SCREENCAST")
-                        .setClass(MainActivity.this, ScreencastService.class));
-                refreshState();
+                animateFAB(v);
+                if (getSharedPreferences(ScreencastService.PREFS, 0).getBoolean(ScreencastService.KEY_RECORDING, false)) {
+                    // stop
+                    getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
+                    startService(new Intent("org.cyanogenmod.ACTION_STOP_SCREENCAST")
+                            .setClass(MainActivity.this, ScreencastService.class));
+                    refreshState();
+                } else {
+                    // record
+                    getSharedPreferences(ScreencastService.PREFS, 0).edit().putBoolean(ScreencastService.KEY_RECORDING, true).apply();
+                    startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
+                            .setClass(MainActivity.this, ScreencastService.class));
+                    finish();
+                }
             }
         });
     }
@@ -69,11 +78,27 @@ public class MainActivity extends Activity {
 
     private void refreshState() {
         final boolean recording = getSharedPreferences(ScreencastService.PREFS, 0).getBoolean(ScreencastService.KEY_RECORDING, false);
-        if (mStartScreencastButton != null) {
-            mStartScreencastButton.setEnabled(!recording);
-        }
-        if (mStopScreencastButton != null) {
-            mStopScreencastButton.setEnabled(recording);
+        if (recording) {
+            mScreencastButton.setImageResource(R.drawable.stop);
+            mText.setText(R.string.stop_description);
+        } else {
+            mScreencastButton.setImageResource(R.drawable.record);
+            mText.setText(R.string.start_description);
         }
     }
+
+    private void animateFAB(View view) {
+        int centerX = (view.getLeft() + view.getRight()) / 2;
+        int centerY = (view.getTop() + view.getBottom()) / 2;
+        int startRadius = 0;
+        int endRadius =
+            (int) Math.hypot(view.getWidth(), view.getHeight());
+
+        Animator anim = ViewAnimationUtils.createCircularReveal(
+            view, centerX, centerY, startRadius, endRadius);
+
+        anim.setDuration(800);
+        anim.start();
+    }
+
 }
