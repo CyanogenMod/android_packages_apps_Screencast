@@ -1,57 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:gravity="center"
-              android:layout_margin="10dp"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
 
     <TextView
-            style="@android:style/TextAppearance.Medium"
-            android:id="@+id/start_description"
-            android:gravity="center"
-            android:text="@string/start_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/hint"
+        style="@style/textStyle"
+        android:text="@string/start_description"
+        android:paddingBottom="8dp"/>
 
     <TextView
-            style="@android:style/TextAppearance.Medium"
-            android:id="@+id/no_audio_warning"
-            android:gravity="center"
-            android:text="@string/no_audio_warning"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/audio_warning"
+        style="@style/textStyle"
+        android:text="@string/no_audio_warning"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"/>
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            >
-        <Button
-                android:id="@+id/settings"
-                android:text="@string/settings"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <Button
-                android:id="@+id/start_screencast"
-                android:text="@string/start_screencast"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <Button
-                android:id="@+id/stop_screencast"
-                android:text="@string/stop"
-                android:enabled="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
+    <FrameLayout android:id="@+id/floating_action_button_container"
+        style="@style/floating_action_button"
+        android:background="@drawable/fab_accent">
+        <ImageButton
+            android:id="@+id/screencast"
+            style="@style/floating_action_button_image"
+            android:background="@drawable/floating_action_button"
+            android:src="@drawable/record" />
+    </FrameLayout>
 </LinearLayout>
