@@ -17,6 +17,7 @@
 package org.cyanogenmod.screencast;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaCodec;
@@ -40,6 +41,7 @@ class RecordingDevice extends EncoderDevice {
     private static final String LOGTAG = "RecordingDevice";
     private static final File RECORDINGS_DIR = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES), "Screencasts");
     File path;
+    public boolean shouldRecordAudio;
 
     public RecordingDevice(Context context, int width, int height) {
         super(context, width, height);

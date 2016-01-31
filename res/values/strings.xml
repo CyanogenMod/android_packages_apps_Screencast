@@ -15,18 +15,18 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Screencast</string>
+    <string name="app_name">Screen Recorder</string>
     <string name="share">Share</string>
     <string name="stop">Stop</string>
     <string name="insufficient_storage">Insufficient storage</string>
     <string name="show_touches">Show touches</string>
+    <string name="hide_touches">Hide touches</string>
     <string name="recording">Recording\u2026</string>
     <string name="recording_ready_to_share">Recording ready to share</string>
     <string name="video_length">Video length: %s</string>
     <string name="not_enough_storage">Not enough storage available</string>
-    <string name="start_screencast">Start Screencast</string>
-    <string name="start_description">Press \"Start Screencast\" to begin recording a video of your Android screen and microphone.</string>
-    <string name="start_description_no_audio">Press \"Start Screencast\" to begin recording a video of your Android screen.</string>
-    <string name="no_audio_warning">To include audio, go to Settings and enable the microphone permission for this app.</string>
-    <string name="settings">Settings</string>
+    <string name="start_description">Tap to start recording the screen and the microphone of your device</string>
+    <string name="start_description_no_audio">Tap to start recording the screen of your device</string>
+    <string name="stop_description">Tap to stop recording</string>
+    <string name="no_audio_warning">To include audio, <b>tap here</b></string>
 </resources>
