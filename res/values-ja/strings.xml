@@ -27,4 +27,7 @@
   <string name="not_enough_storage">十分なストレージがありません</string>
   <string name="start_screencast">画面のキャストを開始</string>
   <string name="start_description">｢画面のキャストを開始｣を押すと、Androidの画面の録画とマイクの録音を開始します。</string>
+  <string name="start_description_no_audio">「画面のキャストを開始」を押すと、お使いのAndroidの画面の録画を開始します。</string>
+  <string name="no_audio_warning">音声を含めて録画するには、設定に移動してこのアプリのマイクの権限を有効にしてください。</string>
+  <string name="settings">設定</string>
 </resources>

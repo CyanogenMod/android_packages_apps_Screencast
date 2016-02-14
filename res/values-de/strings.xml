@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Bildschirmaufnahme</string>
+  <string name="app_name">Bildschirmübertragung</string>
   <string name="share">Teilen</string>
   <string name="stop">Stoppen</string>
   <string name="insufficient_storage">Zu wenig Speicher</string>
@@ -25,6 +25,7 @@
   <string name="recording_ready_to_share">Aufnahme bereit zum Teilen</string>
   <string name="video_length">Videolänge: %s</string>
   <string name="not_enough_storage">Zu wenig freier Speicher</string>
-  <string name="start_screencast">Bildschirmaufnahme starten</string>
-  <string name="start_description">\"Bildschirmaufnahme starten\" antippen, um eine Videoaufnahme Ihres Bildschirmes und des Mikrofons zu starten.</string>
+  <string name="start_screencast">Bildschirmübertragung starten</string>
+  <string name="start_description">\"Bildschirmübertragung starten\" antippen, um eine Videoaufnahme Ihres Bildschirmes und des Mikrofons zu starten.</string>
+  <string name="settings">Einstellungen</string>
 </resources>

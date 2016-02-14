@@ -26,5 +26,5 @@
   <string name="video_length">Videolängd: %s</string>
   <string name="not_enough_storage">Det finns inte tillräckligt med lagringsutrymme</string>
   <string name="start_screencast">Starta Screencast</string>
-  <string name="start_description">Tryck på \"Starta Screencast\" för att börja spela in din skärm och mikrofon.</string>
+  <string name="start_description">Tryck på \"Starta Screencast\" för att börja spela in din Android skärm och mikrofon.</string>
 </resources>
