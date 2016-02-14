@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Няма достатъчно място за съхранение</string>
   <string name="start_screencast">Започни записване</string>
   <string name="start_description">Натиснете \"Започни записване\", за да започнете да записвате видео от вашия андроид екран и микрофон.</string>
+  <string name="start_description_no_audio">Натиснете \"Старт Screencast\", за да започнете да записвате видео на екрана.</string>
+  <string name="no_audio_warning">За да включите аудио, отидете в \"Настройки\" и разрешете на приложението да използва микрофона.</string>
+  <string name="settings">Настройки</string>
 </resources>
