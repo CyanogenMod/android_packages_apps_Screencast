@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Не хватает свободной памяти</string>
   <string name="start_screencast">Начать запись</string>
   <string name="start_description">Нажмите «Начать запись», чтобы записать видео с экрана устройства и звука со встроенного микрофона.</string>
+  <string name="start_description_no_audio">Нажмите «Начать запись», чтобы записать видео с экрана устройства.</string>
+  <string name="no_audio_warning">Чтобы включить запись звука, перейдите в «Настройки» и разрешите приложению использовать микрофон.</string>
+  <string name="settings">Настройки</string>
 </resources>

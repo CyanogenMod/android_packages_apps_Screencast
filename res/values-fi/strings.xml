@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Muistia ei riittävästi saatavilla</string>
   <string name="start_screencast">Aloita nauhoitus</string>
   <string name="start_description">Paina \"Aloita nauhoitus\" aloittaaksesi näytön ja mikrofonin äänen nauhoittamisen.</string>
+  <string name="start_description_no_audio">Paina \"Aloita nauhoitus\" aloittaaksesi näytön kuvan nauhoittamisen.</string>
+  <string name="no_audio_warning">Sisällyttääksesi äänen videoon, mene Asetuksiin, ja salli sovellukselle mikrofonin käyttö.</string>
+  <string name="settings">Asetukset</string>
 </resources>

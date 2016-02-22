@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Nincs elég tárhely</string>
   <string name="start_screencast">Képernyőfelvétel indítása</string>
   <string name="start_description">Érintse meg a \"Képernyőfelvétel indítása\" gombot az Android képernyő és mikrofon rögzítéséhez.</string>
+  <string name="start_description_no_audio">Érintse meg a \"Képernyőfelvétel indítása\" gombot az Android képernyő rögzítéséhez.</string>
+  <string name="no_audio_warning">Hangrögzítéshez, menjen a Beállításokba és engedélyezze a mikrofonhoz való hozzáférést az alkalmazás számára.</string>
+  <string name="settings">Beállítások</string>
 </resources>

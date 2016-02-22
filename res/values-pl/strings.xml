@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Za mało pamięci</string>
   <string name="start_screencast">Rozpocznij Screencast</string>
   <string name="start_description">Naciśnij \"Rozpocznij Screencast\", aby rozpocząć nagrywanie ekranu Androida z dźwiękiem.</string>
+  <string name="start_description_no_audio">Naciśnij \"Rozpocznij Screencast\", aby rozpocząć nagrywanie ekranu twojego Androida.</string>
+  <string name="no_audio_warning">Aby włączyć dźwięk, przejdź do Ustawień i zezwól na używanie mikrofonu dla tej aplikacji.</string>
+  <string name="settings">Ustawienia</string>
 </resources>
