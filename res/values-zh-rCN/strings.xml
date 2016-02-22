@@ -27,4 +27,7 @@
   <string name="not_enough_storage">可用存储空间不足</string>
   <string name="start_screencast">开始屏幕录像</string>
   <string name="start_description">按下“开始屏幕录像”按钮来录制屏幕和麦克风。</string>
+  <string name="start_description_no_audio">点击“开始屏幕录像”按钮将屏幕内容录制为一个视频。</string>
+  <string name="no_audio_warning">要在视频中加入音频，请进入设置，对这个应用授予“麦克风”权限。</string>
+  <string name="settings">设置</string>
 </resources>

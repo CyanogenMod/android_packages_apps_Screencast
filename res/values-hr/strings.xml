@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Nema dovoljno raspoloživog prostora</string>
   <string name="start_screencast">Započni snimanje zaslona</string>
   <string name="start_description">Pritisnite \"Započni snimanje zaslona\" da biste započeli snimati videozapis svojega Android zaslona.</string>
+  <string name="start_description_no_audio">Pritisnite \"Pokreni snimanje zaslona\" da počnete snimanje videa vašeg Android zaslona.</string>
+  <string name="no_audio_warning">Da bi dodali zvuk idite u Postavke i omogućite dozvolu mikrofona za ovu aplikaciju.</string>
+  <string name="settings">Postavke</string>
 </resources>

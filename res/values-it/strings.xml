@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Non è disponibile spazio di archiviazione a sufficienza</string>
   <string name="start_screencast">Avvia Screencast</string>
   <string name="start_description">Premi \"Avvia Screencast\" per iniziare a registrare un video dallo schermo e dal microfono del tuo dispositivo Android.</string>
+  <string name="start_description_no_audio">Premi \"Avvia Screencast\" per iniziare a registrare un video del tuo schermo Android.</string>
+  <string name="no_audio_warning">Per includere l\'audio, vai su impostazioni e attiva l\'autorizzazione del microfono per questa app.</string>
+  <string name="settings">Impostazioni</string>
 </resources>

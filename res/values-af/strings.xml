@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Daar is nie genoeg stoorspasie beskikbaar nie</string>
   <string name="start_screencast">Begin Screencast</string>
   <string name="start_description">Raak \"Begin Screencast\" om \'n opname van you toestel se skerm en mikrofoon to neem.</string>
+  <string name="start_description_no_audio">Druk \"Begin screencast\" om opname te begin van \'n video van jou Android-skerm.</string>
+  <string name="no_audio_warning">Om Oudio in te sluit, gaan na Instelling en aktiveer mikrofoon toestemming vir die toep.</string>
+  <string name="settings">Instellings</string>
 </resources>

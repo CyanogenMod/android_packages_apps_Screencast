@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Нема довољно доступног простора</string>
   <string name="start_screencast">Покрени Screencast</string>
   <string name="start_description">Притисни \"Покрени Screencast\" да би започео снимање твог Аndroid екрана и микрофона.</string>
+  <string name="start_description_no_audio">Притисни \" Старт снимања екрана\" да почнеш снимање видеа твог андроид екрана.</string>
+  <string name="no_audio_warning">Да додаш звук иди у подешавања и омогући дозволу микрофона за ту апликацију.</string>
+  <string name="settings">Подешавања</string>
 </resources>
