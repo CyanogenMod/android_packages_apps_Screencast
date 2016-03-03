@@ -29,6 +29,7 @@ import android.hardware.display.VirtualDisplay;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.IBinder;
+import android.os.Process;
 import android.os.RemoteException;
 import android.os.StatFs;
 import android.os.SystemClock;
@@ -164,7 +165,9 @@ public class ScreencastService extends Service {
         getSharedPreferences(ScreencastService.PREFS, 0)
                 .edit().putBoolean(ScreencastService.KEY_RECORDING, false).apply();
         // clean show_touches settings if user enable show_touches in this activity
-        Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
+        if (Process.myUserHandle().isOwner()) {
+            Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 0);
+        }
         cleanup();
 
         if (!hasAvailableSpace()) {
@@ -192,8 +195,11 @@ public class ScreencastService extends Service {
                 startTime = SystemClock.elapsedRealtime();
                 registerScreencaster();
                 mBuilder = createNotificationBuilder();
-                Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
-                addNotificationTouchButton(true);
+
+                if (Process.myUserHandle().isOwner()) {
+                    Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
+                    addNotificationTouchButton(true);
+                }
 
                 timer = new Timer();
                 timer.scheduleAtFixedRate(new TimerTask() {
