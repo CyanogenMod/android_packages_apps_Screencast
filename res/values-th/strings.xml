@@ -27,4 +27,7 @@
   <string name="not_enough_storage">พื้นที่เก็บข้อมูลไม่เพียงพอ</string>
   <string name="start_screencast">เริ่มบันทึกวิดีโอหน้าจอ</string>
   <string name="start_description">แตะ \"เริ่มบันทึกวิดีโอหน้าจอ\" เพื่อเริ่มบันทึกวิดีโอหน้าจอ Android และไมโครโฟนของคุณ</string>
+  <string name="start_description_no_audio">แตะ \"เริ่มบันทึกวิดีโอหน้าจอ\" เพื่อเริ่มการบันทึกวิดีโอหน้าจอ Android ของคุณ</string>
+  <string name="no_audio_warning">เพื่อบันทึกเสียงพร้อมกันไปด้วย ไปที่การตั้งค่าและอนุญาตให้เปิดใช้งานไมโครโฟนกับแอปนี้</string>
+  <string name="settings">ตั้งค่า</string>
 </resources>
