@@ -16,15 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">ಪರದೆಪ್ರಸಾರ</string>
-  <string name="share">ಹಂಚಿ</string>
-  <string name="stop">ನಿಲ್ಲಿಸಿ</string>
-  <string name="insufficient_storage">ಸಂಗ್ರಹಣೆಯಲ್ಲಿ ಸಾಕಷ್ಟು ಜಾಗ ಇಲ್ಲ</string>
+  <string name="app_name">ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್</string>
+  <string name="share">ಹಂಚು</string>
+  <string name="stop">ನಿಲ್ಲಿಸು</string>
+  <string name="insufficient_storage">ಅಸಮರ್ಪಕ ಸಂಗ್ರಹ</string>
   <string name="show_touches">ಸ್ಪರ್ಶಗಳನ್ನು ತೋರಿಸು</string>
-  <string name="recording">ರಿಕಾರ್ಡಿಂಗ್\u2026</string>
-  <string name="recording_ready_to_share">ರಿಕಾರ್ಡಿಂಗ್ ಹಂಚಲು ಸಿದ್ಧವಾಗಿದೆ</string>
-  <string name="video_length">ವೀಡಿಯೋ  ಉದ್ದ: %s</string>
-  <string name="not_enough_storage">ಸಾಕಷ್ಟು ಸಂಗ್ರಹಣೆ ಜಾಗ ಲಭ್ಯವಿಲ್ಲ</string>
-  <string name="start_screencast">ಪರದೆಪ್ರಸಾರ ಆರಂಭಿಸು</string>
-  <string name="start_description">ನಿಮ್ಮ ಆಂಡ್ರಾಯ್ಡ್ ಪರದೆ ಮತ್ತು ಧ್ವನಿಗ್ರಾಹಕದ ವೀಡಿಯೋ ರಿಕಾರ್ಡಿಂಗ್ ಪ್ರಾರಂಭಿಸಲು \"ಪರದೆ ಪ್ರಸಾರ ಆರಂಭಿಸು\" ಸ್ಪರ್ಶಿಸಿ.</string>
+  <string name="recording">ರೆಕಾರ್ಡಿಂಗ್‌\u2026</string>
+  <string name="recording_ready_to_share">ಹಂಚಿಕೊಳ್ಳಲು ರೆಕಾರ್ಡಿಂಗ್‌ ರೆಡಿಯಾಗಿದೆ</string>
+  <string name="video_length">ವಿಡಿಯೋ ಅವಧಿ: %s</string>
+  <string name="not_enough_storage">ಸಾಕಷ್ಟು ಸಂಗ್ರಹ ಲಭ್ಯವಿಲ್ಲ</string>
+  <string name="start_screencast">ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್ ಆರಂಭಿಸಿ</string>
+  <string name="start_description">ನಿಮ್ಮ ಆಂಡ್ರಾಯ್ಡ್ ತೆರೆ ವಿಡಿಯೋ ಹಾಗೂ ಮೈಕ್ರೋಫೋನ್‌ನ ರೆಕಾರ್ಡಿಂಗ್‌ ಆರಂಭಿಸಲು \”ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್\” ಒತ್ತಿ.</string>
+  <string name="start_description_no_audio">ನಿಮ್ಮ ಆಂಡ್ರಾಯ್ಡ್ ತೆರೆ ವಿಡಿಯೋ ಹಾಗೂ ಮೈಕ್ರೋಫೋನ್‌ನ ರೆಕಾರ್ಡಿಂಗ್‌ ಆರಂಭಿಸಲು \”ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್\” ಒತ್ತಿ.</string>
+  <string name="no_audio_warning">ಆಡಿಯೋ ಒಳಗೊಳ್ಳಬಹುದು, ಸೆಟ್ಟಿಂಗ್ಗಳಿಗೆ ಹೋಗಿ ಈ ಅಪ್ಲಿಕೇಶನ್ ಮೈಕ್ರೊಫೋನ್ ಅನುಮತಿ ಶಕ್ತಗೊಳಿಸಿ.</string>
+  <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
 </resources>
