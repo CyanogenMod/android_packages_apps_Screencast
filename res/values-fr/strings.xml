@@ -27,5 +27,7 @@
   <string name="not_enough_storage">Mémoire disponible insuffisante</string>
   <string name="start_screencast">Démarrer Screencast</string>
   <string name="start_description">Appuyez sur « Démarrer Screencast » pour lancer l\'enregistrement d\'une vidéo de votre écran Android et du microphone.</string>
+  <string name="start_description_no_audio">Appuyer sur « Démarrer Screencast » pour lancer l\'enregistrement vidéo de votre écran Android.</string>
+  <string name="no_audio_warning">Pour inclure l\'audio, aller dans Paramètres et activer l\'autorisation de microphone pour cette application.</string>
   <string name="settings">Paramètres</string>
 </resources>

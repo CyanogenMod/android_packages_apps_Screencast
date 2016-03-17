@@ -28,6 +28,6 @@
   <string name="start_screencast">Iniciar Gravador de ecrã</string>
   <string name="start_description">Pressione \"Iniciar Gravador de ecrã\" para começar a gravar um vídeo do ecrã e microfone do seu dispositivo Android.</string>
   <string name="start_description_no_audio">Toque em \"Iniciar Gravador de ecrã\" para começar a gravar um vídeo do ecrã do seu dispositivo Android.</string>
-  <string name="no_audio_warning">Para gravar som, vá a Definições e ative as permissões de microfone para esta aplicação.</string>
+  <string name="no_audio_warning">Para incluir som, vá às Definições e garanta a permissão de microfone para esta aplicação.</string>
   <string name="settings">Definições</string>
 </resources>
