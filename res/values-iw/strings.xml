@@ -28,6 +28,6 @@
   <string name="start_screencast">התחל הקלטת מסך</string>
   <string name="start_description">לחץ על \"התחל הקלטת מסך\" כדי להתחיל בהקלטת וידאו של המסך והמיקרופון שלך.</string>
   <string name="start_description_no_audio">לחץ על \"התחל הקלטת מסך\" כדי להתחיל הקלטת וידאו של מסך האנדרואיד שלך.</string>
-  <string name="no_audio_warning">כדי לכלול שמע, יש לעבור למסך הגדרות, ולאפשר את הרשאות המיקרופון ליישום זה.</string>
+  <string name="no_audio_warning">כדי לכלול שמע, יש לעבור למסך ההגדרות, ולהפעיל את הרשאות המיקרופון ליישום זה.</string>
   <string name="settings">הגדרות</string>
 </resources>
