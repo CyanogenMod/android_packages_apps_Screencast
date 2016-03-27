@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Yeterli kullanılabilir depolama alanı yok</string>
   <string name="start_screencast">Ekran yayınına başla</string>
   <string name="start_description">Android ekran ve mikrofon kaydınıza başlamak için \"Ekran yayınına başla\"ya basın.</string>
+  <string name="start_description_no_audio">Cihazın ekran görüntüsünü video olarak kaydetmek için \"Ekran Yayınına Başla\" tuşuna basın.</string>
+  <string name="no_audio_warning">Ses eklemek için Ayarlar\'a gidin ve uygulamanın mikrofona erişimine izin verin.</string>
+  <string name="settings">Ayarlar</string>
 </resources>
