@@ -17,7 +17,5 @@
 <resources>
     <dimen name="fab_size">56dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="fab_icon_size">24dp</dimen>
     <dimen name="fab_elevation_normal">4dp</dimen>
-    <dimen name="fab_elevation_pressed">2dp</dimen>
 </resources>
