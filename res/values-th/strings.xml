@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">บันทึกวิดีโอหน้าจอ</string>
+  <string name="app_name">บันทึกหน้าจอ</string>
   <string name="share">แบ่งปัน</string>
   <string name="stop">หยุด</string>
   <string name="insufficient_storage">พื้นที่จัดเก็บไม่เพียงพอ</string>
   <string name="show_touches">แสดงการแตะ</string>
+  <string name="hide_touches">ซ่อนการแตะ</string>
   <string name="recording">กำลังบันทึก\u2026</string>
   <string name="recording_ready_to_share">การบันทึกพร้อมที่จะแบ่งปัน</string>
   <string name="video_length">ความยาววิดีโอ: %s</string>
   <string name="not_enough_storage">พื้นที่เก็บข้อมูลไม่เพียงพอ</string>
-  <string name="start_screencast">เริ่มบันทึกวิดีโอหน้าจอ</string>
-  <string name="start_description">แตะ \"เริ่มบันทึกวิดีโอหน้าจอ\" เพื่อเริ่มบันทึกวิดีโอหน้าจอ Android และไมโครโฟนของคุณ</string>
-  <string name="start_description_no_audio">แตะ \"เริ่มบันทึกวิดีโอหน้าจอ\" เพื่อเริ่มการบันทึกวิดีโอหน้าจอ Android ของคุณ</string>
-  <string name="no_audio_warning">เพื่อบันทึกเสียงพร้อมกันไปด้วย ไปที่การตั้งค่าและอนุญาตให้เปิดใช้งานไมโครโฟนกับแอปนี้</string>
-  <string name="settings">ตั้งค่า</string>
+  <string name="start_description">แตะเพื่อบันทึกหน้าจอและไมโครโฟนของอุปกรณ์ของคุณ</string>
+  <string name="start_description_no_audio">แตะเพื่อบันทึกหน้าจองของคุณ</string>
+  <string name="stop_description">แตะเพื่อหยุดการบันทึก</string>
+  <string name="no_audio_warning">เพื่อบันทึกเสียงด้วย <b>แตะที่นี่</b></string>
 </resources>

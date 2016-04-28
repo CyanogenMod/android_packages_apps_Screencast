@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">સ્ક્રીનકાસ્ટ</string>
   <string name="share">શેર કરો</string>
   <string name="stop">રોકો</string>
   <string name="insufficient_storage">અપર્યાપ્ત સંગ્રહ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">રેકૉર્ડિંગ સહિયારું કરવા માટે તૈયાર</string>
   <string name="video_length">વિડિયો લંબાઇ: %s</string>
   <string name="not_enough_storage">પર્યાપ્ત સંગ્રહ ઉપલબ્ધ નથી</string>
-  <string name="start_screencast">સ્ક્રીનકાસ્ટ શરૂ કરો</string>
-  <string name="start_description">તમારા Android સ્ક્રીન અને માઇક્રોફોનનો વીડિયો રેકૉર્ડ કરવો શરૂ કરવા \&quot;Start Screencast\&quot; દબાવો.</string>
-  <string name="start_description_no_audio">તમારા Android સ્ક્રીન પર વીડિયો રેકૉર્ડ શરૂ કરવા Start Screencast દબાવો.</string>
-  <string name="no_audio_warning">ઓડિયો સમાવેશ કરવા માટે, સેટિંગ્સ પર જાઓ અને આ એપ્લિકેશન માટે માઇક્રોફોન પરવાનગી સક્રિય કરે છે.</string>
-  <string name="settings">સેટિંગ્સ</string>
 </resources>

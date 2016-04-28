@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">স্ক্ৰীণকাষ্ট</string>
   <string name="share">শ্বেয়াৰ</string>
   <string name="stop">ষ্টপ</string>
   <string name="insufficient_storage">অপৰ্যাপ্ত ষ্ট\'ৰেজ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">ৰেকৰ্ডিং ভাগ-বতৰা কৰিবলৈ সাজু হৈ আছে</string>
   <string name="video_length">ভিডিঅ\' দৈৰ্ঘ: %s</string>
   <string name="not_enough_storage">পৰ্যাপ্ত ষ্ট\'ৰেজ উপলব্ধ নহয়</string>
-  <string name="start_screencast">স্ক্ৰীণকাষ্ট আৰম্ভ কৰক</string>
-  <string name="start_description">আপোনাৰ Android স্ক্ৰীণ আৰু মাইক্ৰ\'ফোনৰ ভিডিঅ\' ৰেকৰ্ডিং আৰম্ভ কৰিবলৈ \&quot;Start Screencast\&quot; টিপক।</string>
-  <string name="start_description_no_audio">আপোনাৰ Android স্ক্ৰীণৰ ভিডিঅ\' ৰেকৰ্ডিং আৰম্ভ কৰিবলৈ \"Start Screencast\" টিপক.</string>
-  <string name="no_audio_warning">অডিঅ\' অন্তৰ্ভুক্ত কৰিবলৈ, ছেটিংচলৈ যাওক আৰু এইটো এপ্পৰ বাবে মাইক্ৰ\'ফোন অনুমতি সক্ৰিয় কৰক।</string>
-  <string name="settings">ছেটিংচ</string>
 </resources>

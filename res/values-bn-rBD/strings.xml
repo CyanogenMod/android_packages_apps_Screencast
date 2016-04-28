@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">স্ক্রীনকাস্ট</string>
   <string name="share">শেয়ার</string>
   <string name="stop">থামুন</string>
   <string name="insufficient_storage">অপর্যাপ্ত যায়গা</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">শেয়ার করার জন্য রেকর্ডিং প্রস্তুত</string>
   <string name="video_length">ভিডিও দৈর্ঘ্যঃ %s</string>
   <string name="not_enough_storage">যথেষ্ট যায়গা উপলভ্য নয়</string>
-  <string name="start_screencast">স্ক্রীনকাস্ট শুরু</string>
-  <string name="start_description">\"স্কীনকাস্ট শুরু\" চাপুন একটি ভিডিও রেকর্ডিং শুরু করতে, আপনার এন্ড্রয়েড পর্দা এবং মাইক্রোফোনের।</string>
 </resources>

@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">තිරවිකාශනය</string>
   <string name="share">බෙදාහදාගන්න</string>
   <string name="stop">නවත්වන්න</string>
   <string name="insufficient_storage">ආචයනය ප්‍රමාණවත් නැත</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">රෙකෝඩනය බෙදාහදාගැනීමට සූදානම්ය</string>
   <string name="video_length">වීඩියෝවේ දිග: %s</string>
   <string name="not_enough_storage">ආචයනය ප්‍රමාණවත් නැත</string>
-  <string name="start_screencast">තිරවිකාශනය අරඹන්න</string>
-  <string name="start_description">ඔබගේ Android තිරයේ සහ මයික්‍රොපෝනයේ වීඩියෝවක රෙකෝඩනය ඇරඹීමට \"තිරවිකාශනය අරඹන්න\" මත ඔබන්න.</string>
 </resources>

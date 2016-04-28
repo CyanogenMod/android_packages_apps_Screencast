@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
   <string name="share">Jaga</string>
   <string name="stop">Stopp</string>
   <string name="insufficient_storage">Pole piisavalt mälu</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Salvestus valmis jagamiseks</string>
   <string name="video_length">Video pikkus: %s</string>
   <string name="not_enough_storage">Pole piisavalt ruumi</string>
-  <string name="start_screencast">Alusta Screencast</string>
-  <string name="start_description">Vajuta \"Alusta Screencast\" et salvestada video teie Androidi ekraanist ja mikrofonist.</string>
 </resources>

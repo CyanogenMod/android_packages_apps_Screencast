@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">ارسال صفحه</string>
   <string name="share">اشتراک‌گذاری</string>
   <string name="stop">توقف</string>
   <string name="insufficient_storage">فضای ذخیره سازی کافی نیست</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">ضبط آماده اشتراک‌گذاری است</string>
   <string name="video_length">طول ویدیو: %s</string>
   <string name="not_enough_storage">فضای ذخیره سازی کافی در دسترس نیست</string>
-  <string name="start_screencast">شروع ارسال صفحه</string>
-  <string name="start_description">برای شروع ضبط ویدیو از صفحه و میکروفن گوشی خود \"شروع ارسال صفحه\" را بزنید.</string>
 </resources>

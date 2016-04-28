@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Дубляваць экран</string>
   <string name="share">Падзяліцца</string>
   <string name="stop">Стоп</string>
   <string name="insufficient_storage">Недастаткова памяці</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Запіс гатоў да адпраўкі</string>
   <string name="video_length">Працягласць відэа: %s</string>
   <string name="not_enough_storage">Бракуе вольнай памяці</string>
-  <string name="start_screencast">Пачаць запіс</string>
-  <string name="start_description">Націсніце «Пачаць запіс», каб запісаць відэа з экрана прылады і гуку з убудаванага мікрафона.</string>
 </resources>

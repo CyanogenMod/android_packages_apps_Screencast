@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Distribuire ecran</string>
   <string name="share">Distribuie</string>
   <string name="stop">Oprire</string>
   <string name="insufficient_storage">Capacitate de stocare insuficientă</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">Înregistrarea este gata de distribuție</string>
   <string name="video_length">Lungime video: %s</string>
   <string name="not_enough_storage">Nu este spațiu suficient pentru stocare</string>
-  <string name="start_screencast">Pornește Distribuirea Ecranului</string>
-  <string name="start_description">Apasă „Pornește distribuirea ecranului” pentru a începe înregistrarea video a ecranului și a microfonului dispozitivului Android.</string>
-  <string name="start_description_no_audio">Apasă \"Pornește Proiecție ecran\" pentru a începe înregistrarea unui videoclip al ecranului Android.</string>
-  <string name="no_audio_warning">Pentru a include audio, du-te la Setări și activează permisiunea de microfon pentru această aplicație.</string>
-  <string name="settings">Setări</string>
 </resources>

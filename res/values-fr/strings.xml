@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
   <string name="share">Partager</string>
   <string name="stop">Arrêter</string>
   <string name="insufficient_storage">Stockage insuffisant</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">Enregistrement prêt à être partagé</string>
   <string name="video_length">Durée de la vidéo : %s</string>
   <string name="not_enough_storage">Mémoire disponible insuffisante</string>
-  <string name="start_screencast">Démarrer Screencast</string>
-  <string name="start_description">Appuyez sur « Démarrer Screencast » pour lancer l\'enregistrement d\'une vidéo de votre écran Android et du microphone.</string>
-  <string name="start_description_no_audio">Appuyer sur « Démarrer Screencast » pour lancer l\'enregistrement vidéo de votre écran Android.</string>
-  <string name="no_audio_warning">Pour inclure l\'audio, aller dans Paramètres et activer l\'autorisation de microphone pour cette application.</string>
-  <string name="settings">Paramètres</string>
 </resources>

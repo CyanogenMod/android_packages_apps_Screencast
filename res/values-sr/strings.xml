@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
+  <string name="app_name">Снимач екрана</string>
   <string name="share">Дели</string>
   <string name="stop">Заустави</string>
   <string name="insufficient_storage">Недовољно простора</string>
   <string name="show_touches">Прикажи додире</string>
+  <string name="hide_touches">Сакриј додире</string>
   <string name="recording">Снимање\u2026</string>
   <string name="recording_ready_to_share">Снимање је спремно за дељење</string>
   <string name="video_length">Дужина видеа: %s</string>
   <string name="not_enough_storage">Нема довољно доступног простора</string>
-  <string name="start_screencast">Покрени Screencast</string>
-  <string name="start_description">Притисни \"Покрени Screencast\" да би започео снимање твог Аndroid екрана и микрофона.</string>
-  <string name="start_description_no_audio">Притисни \" Старт снимања екрана\" да почнеш снимање видеа твог андроид екрана.</string>
-  <string name="no_audio_warning">Да додаш звук иди у подешавања и омогући дозволу микрофона за ту апликацију.</string>
-  <string name="settings">Подешавања</string>
+  <string name="start_description">Тапните за почетак снимања екрана и звука са микрофона вашег уређаја</string>
+  <string name="start_description_no_audio">Тапните за почетак снимања екрана вашег уређаја</string>
+  <string name="stop_description">Тапните за крај снимања</string>
+  <string name="no_audio_warning">Да укључите звук, <b>тапните овде</b></string>
 </resources>

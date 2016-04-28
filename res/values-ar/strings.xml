@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">تسجيل الشاشة</string>
   <string name="share">مشاركة</string>
   <string name="stop">توقف</string>
   <string name="insufficient_storage">مخزن غير كاف</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">التسجيل جاهز للمشاركة</string>
   <string name="video_length">طول الفيديو: %s</string>
   <string name="not_enough_storage">مساحة المخزن المتاحة غير كافية</string>
-  <string name="start_screencast">بدء تسجيل الشاشة</string>
-  <string name="start_description">اضغط على \"بدء تسجيل الشاشة\" لبدء تسجيل فيديو من شاشة Android الخاص بك والميكروفون.</string>
-  <string name="start_description_no_audio">اضغط على \"بدء تسجيل الشاشة\" لبدء تسجيل فيديو من شاشة Android.</string>
-  <string name="no_audio_warning">لتضمين الصوت، انتقل إلى \"إعدادات\" مع تمكين إذن الميكروفون لهذا التطبيق.</string>
-  <string name="settings">إعدادات</string>
 </resources>

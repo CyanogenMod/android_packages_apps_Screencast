@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Ekrānraide</string>
   <string name="share">Kopīgot</string>
   <string name="stop">Apturēt</string>
   <string name="insufficient_storage">Krātuvē nepietiek vietas</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Ieraksta gatavs kopīgošanai</string>
   <string name="video_length">Video garums: %s</string>
   <string name="not_enough_storage">Nav pietiekams krātuvju apjoms</string>
-  <string name="start_screencast">Sākt ekrānraidi</string>
-  <string name="start_description">Spiediet \'Sākt ekrānraidi\', lai sāktu ierakstīt video Android iekārtas ekrānu un mikrofonu.</string>
 </resources>

@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
+  <string name="app_name">Nahrávání plochy</string>
   <string name="share">Sdílet</string>
   <string name="stop">Zastavit</string>
   <string name="insufficient_storage">Nedostatek místa</string>
   <string name="show_touches">Zobrazit doteky</string>
+  <string name="hide_touches">Skrýt doteky</string>
   <string name="recording">Nahrávání\u2026</string>
-  <string name="recording_ready_to_share">Záznam je připrav ke sdílení</string>
+  <string name="recording_ready_to_share">Záznam je připraven ke sdílení</string>
   <string name="video_length">Délka záznamu: %s</string>
   <string name="not_enough_storage">Nedostatek místa v úložišti</string>
-  <string name="start_screencast">Spustit Screencast</string>
-  <string name="start_description">Pro nahrávání obrazovky systému a zvuku mikrofonu stiskněte tlačítko „Spustit Screencast“.</string>
-  <string name="start_description_no_audio">Tlačítkem „Spustit Screencast“ spustíte nahrávání obrazovky.</string>
-  <string name="no_audio_warning">Chcete-li zahrnout zvuk, přejděte do „Nastavení“ a povolte oprávnění použití mikrofonu pro tuto aplikaci.</string>
-  <string name="settings">Nastavení</string>
+  <string name="start_description">Dotykem zahájíte nahrávání obrazovky i se zvukem</string>
+  <string name="start_description_no_audio">Dotykem zahájíte nahrávání obrazovky</string>
+  <string name="stop_description">Dotykem zastavit pořizování záznamu</string>
+  <string name="no_audio_warning">Chcete-li nahrát i zvuk, <b>klepněte sem</b></string>
 </resources>

@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">画面のキャスト</string>
   <string name="share">共有</string>
   <string name="stop">停止</string>
   <string name="insufficient_storage">十分なストレージ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">録画を共有する準備ができました</string>
   <string name="video_length">録画時間: %s</string>
   <string name="not_enough_storage">十分なストレージがありません</string>
-  <string name="start_screencast">画面のキャストを開始</string>
-  <string name="start_description">｢画面のキャストを開始｣を押すと、Androidの画面の録画とマイクの録音を開始します。</string>
-  <string name="start_description_no_audio">[画面のキャストを開始]を押すと、お使いのAndroidの画面の録画を開始します。</string>
-  <string name="no_audio_warning">音声を含めて録画するには、設定に移動してこのアプリのマイクの権限を有効にしてください。</string>
-  <string name="settings">設定</string>
 </resources>

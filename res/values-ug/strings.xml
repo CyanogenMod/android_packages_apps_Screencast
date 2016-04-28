@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">ئېكران سىنى</string>
   <string name="share">ھەمبەھىر</string>
   <string name="stop">توختا</string>
   <string name="insufficient_storage">ساقلاش بوشلۇقى يېتىشمەيدۇ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">خاتىرىلىگەن مەزمۇن ھەمبەھىرلەشكە تەييار</string>
   <string name="video_length">سىن ئۇزۇنلۇقى: %s</string>
   <string name="not_enough_storage">ئىشلەتكىلى بولىدىغان بوشلۇق يېتىشمەيدۇ</string>
-  <string name="start_screencast">ئېكراننى سىنغا ئېلىشنى باشلا</string>
-  <string name="start_description">«ئېكراننى سىنغا ئېلىشنى باشلا» چېكىلسە Android ئېكرانى ۋە مىكروفون ئارقىلىق سىنغا ئېلىشنى باشلايدۇ.</string>
-  <string name="start_description_no_audio">\"ئېكراننى سىنغا ئېلىشنى باشلاش\" كۇنۇپكىسىنى بېسىپ، ئېكراننى سۈرەتكە ئېلىشنى باشلاڭ.</string>
-  <string name="no_audio_warning">سىنغا ئاۋاز كىرگۈزۈش ئۈچۈن، تەڭشەككە كىرىڭ، ھەمدە بۇ ئەپكە \"مىكروفون\" ئىشلىتىش ھوقۇقىنى بېرىڭ.</string>
-  <string name="settings">تەڭشەك</string>
 </resources>

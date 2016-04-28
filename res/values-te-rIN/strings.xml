@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">స్క్రీన్ కాస్ట్</string>
   <string name="share">భాగస్వామ్యం చేయి</string>
   <string name="stop">ఆపివేయండి</string>
   <string name="insufficient_storage">తగినంత నిల్వ లేదు</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">రికార్డింగ్ పంచుకోబడడానికి సిద్ధంగా ఉంది</string>
   <string name="video_length">వీడియో పొడవు: %s</string>
   <string name="not_enough_storage">తగినంత నిల్వ అందుబాటులో లేదు</string>
-  <string name="start_screencast">స్క్రీన్‌కాస్టును ప్రారంభించుము</string>
-  <string name="start_description">మీ ఆండ్రాయిడ్ తెర మరియు మైక్రోఫోన్ యొక్క వీడియోను రికార్డ్ చేయడం ప్రారంభించడానికి \&quot;స్టార్ట్ స్క్రీన్ కాస్ట్\&quot; నొక్కండి.</string>
-  <string name="start_description_no_audio">ప్రెస్ \"ప్రారంభం స్క్రీన్కాస్ట్\" మీ Android స్క్రీన్ వీడియో రికార్డింగ్‌ను ప్రారంభించడానికి.</string>
-  <string name="no_audio_warning">ఆడియోను చేర్చేందుకు, సెట్టింగులు మరియు ఈ అనువర్తనం కోసం మైక్రోఫోన్ అనుమతిని పొందండి.</string>
-  <string name="settings">సెట్టింగులు</string>
 </resources>

@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
+  <string name="app_name">Ruudunkaappaus</string>
   <string name="share">Jaa</string>
   <string name="stop">Lopeta</string>
   <string name="insufficient_storage">Muisti ei riitä</string>
   <string name="show_touches">Näytä kosketukset</string>
+  <string name="hide_touches">Piilota kosketukset</string>
   <string name="recording">Nauhoitetaan\u2026</string>
   <string name="recording_ready_to_share">Nauhoitus valmis jaettavaksi</string>
   <string name="video_length">Videon kesto: %s</string>
   <string name="not_enough_storage">Muistia ei riittävästi saatavilla</string>
-  <string name="start_screencast">Aloita nauhoitus</string>
-  <string name="start_description">Paina \"Aloita nauhoitus\" aloittaaksesi näytön ja mikrofonin äänen nauhoittamisen.</string>
-  <string name="start_description_no_audio">Paina \"Aloita nauhoitus\" aloittaaksesi näytön kuvan nauhoittamisen.</string>
-  <string name="no_audio_warning">Sisällyttääksesi äänen videoon, mene Asetuksiin, ja salli sovellukselle mikrofonin käyttö.</string>
-  <string name="settings">Asetukset</string>
+  <string name="start_description">Paina tästä aloittaaksesi laitteen näytön kuvan ja mikrofonin äänen nauhoittamisen</string>
+  <string name="start_description_no_audio">Paina tästä aloittaaksesi laitteen näytön kuvan nauhoittamisen</string>
+  <string name="stop_description">Lopeta nauhoittaminen</string>
+  <string name="no_audio_warning">Sisällyttääksesi äänen, <b>paina tästä</b></string>
 </resources>

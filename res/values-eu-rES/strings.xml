@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Igorri pantaila</string>
+  <string name="app_name">Pantaila grabatzailea</string>
   <string name="share">Partekatu</string>
   <string name="stop">Gelditu</string>
   <string name="insufficient_storage">Ez dago biltegiratze nahikorik</string>
   <string name="show_touches">Erakutsi ukipenak</string>
+  <string name="hide_touches">Ezkutatu ukipenak</string>
   <string name="recording">Grabatzen\u2026</string>
   <string name="recording_ready_to_share">Grabazioa partekatzeko prest dago</string>
   <string name="video_length">Bideo luzera: %s</string>
   <string name="not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
-  <string name="start_screencast">Hasi pantaila igortzen</string>
-  <string name="start_description">Sakatu \"Hasi pantaila igortzen\" Android gailuaren pantaila eta mikrofonoaren bideoa grabatzen hasteko.</string>
-  <string name="start_description_no_audio">Sakatu \"Hasi pantaila igortzen\" Android pantailaren bideoa grabatzen hasteko.</string>
-  <string name="no_audio_warning">Audioa gehitzeko, gaitu mikrofonoa erabiltzeko baimena Ezarpenak atalean.</string>
-  <string name="settings">Ezarpenak</string>
+  <string name="start_description">Sakatu zure gailuaren pantaila eta mikrofonoa grabatzen hasteko</string>
+  <string name="start_description_no_audio">Sakatu zure gailuaren pantaila grabatzen hasteko</string>
+  <string name="stop_description">Sakatu grabaketa gelditzeko</string>
+  <string name="no_audio_warning">Audioa txertatzeko <b>sakatu hemen</b></string>
 </resources>

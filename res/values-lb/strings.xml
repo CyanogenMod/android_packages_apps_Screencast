@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Schiermopnam</string>
   <string name="share">Deelen</string>
   <string name="stop">Stopp</string>
   <string name="insufficient_storage">Net genuch Späicher</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Opnam prett fir ze deelen</string>
   <string name="video_length">Videolängt: %s</string>
   <string name="not_enough_storage">Net genuch Späicher disponibel</string>
-  <string name="start_screencast">Schiermopnam starten</string>
-  <string name="start_description">Dréck \"Schiermopnam starten\" fir eng Videoopnam vum Schierm a vum Mikro ze starten.</string>
 </resources>

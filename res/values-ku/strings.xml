@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">بڵاوکردنەوەی ڕوونما</string>
   <string name="share">بڵاوکردنەوە</string>
   <string name="stop">وەستاندن</string>
   <string name="insufficient_storage">یادگە کەمە</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">تۆمارکراو ئامادەیە بۆ ناردن</string>
   <string name="video_length">ماوەی ڤیدیۆ: %s</string>
   <string name="not_enough_storage">شوێنی پێویستی یادگە لەبەردەستدا نیە</string>
-  <string name="start_screencast">دەستپێکردنی بڵاوکردنەوەی ڕوونما</string>
-  <string name="start_description">پەنجە بنێ بە \"دەستپێکردنی بڵاوکردنەوەی ڕوونما\" دا بۆ دەستپێکردنی تۆمارکردنی ڤیدیۆیی ڕوونمای مۆبایلەکەت لەگەڵ دەنگدا.</string>
 </resources>

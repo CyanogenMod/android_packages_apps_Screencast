@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">स्क्रीनकास्ट</string>
   <string name="share">साझा करें</string>
   <string name="stop">रुकें</string>
   <string name="insufficient_storage">अपर्याप्त जगह</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">रिकॉर्डिंग को साझा करने के लिए तैयार</string>
   <string name="video_length">वीडियो की लंबाई: %s</string>
   <string name="not_enough_storage">पर्याप्त जगह नहीं है</string>
-  <string name="start_screencast">स्क्रीनकास्ट शुरू करें</string>
-  <string name="start_description">अपने ऐंड्रोइड स्क्रीन और माइक्रोफ़ोन का वीडिय लेना शुरू करने के लिए \"स्क्रीनकास्ट शुरू करें\" को दबाएँ।</string>
 </resources>

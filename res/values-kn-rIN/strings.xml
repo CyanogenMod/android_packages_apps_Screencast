@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್</string>
   <string name="share">ಹಂಚು</string>
   <string name="stop">ನಿಲ್ಲಿಸು</string>
   <string name="insufficient_storage">ಅಸಮರ್ಪಕ ಸಂಗ್ರಹ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">ಹಂಚಿಕೊಳ್ಳಲು ರೆಕಾರ್ಡಿಂಗ್‌ ರೆಡಿಯಾಗಿದೆ</string>
   <string name="video_length">ವಿಡಿಯೋ ಅವಧಿ: %s</string>
   <string name="not_enough_storage">ಸಾಕಷ್ಟು ಸಂಗ್ರಹ ಲಭ್ಯವಿಲ್ಲ</string>
-  <string name="start_screencast">ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್ ಆರಂಭಿಸಿ</string>
-  <string name="start_description">ನಿಮ್ಮ ಆಂಡ್ರಾಯ್ಡ್ ತೆರೆ ವಿಡಿಯೋ ಹಾಗೂ ಮೈಕ್ರೋಫೋನ್‌ನ ರೆಕಾರ್ಡಿಂಗ್‌ ಆರಂಭಿಸಲು \”ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್\” ಒತ್ತಿ.</string>
-  <string name="start_description_no_audio">ನಿಮ್ಮ ಆಂಡ್ರಾಯ್ಡ್ ತೆರೆ ವಿಡಿಯೋ ಹಾಗೂ ಮೈಕ್ರೋಫೋನ್‌ನ ರೆಕಾರ್ಡಿಂಗ್‌ ಆರಂಭಿಸಲು \”ಸ್ಕ್ರೀನ್ ಕಾಸ್ಟ್\” ಒತ್ತಿ.</string>
-  <string name="no_audio_warning">ಆಡಿಯೋ ಒಳಗೊಳ್ಳಬಹುದು, ಸೆಟ್ಟಿಂಗ್ಗಳಿಗೆ ಹೋಗಿ ಈ ಅಪ್ಲಿಕೇಶನ್ ಮೈಕ್ರೊಫೋನ್ ಅನುಮತಿ ಶಕ್ತಗೊಳಿಸಿ.</string>
-  <string name="settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
 </resources>

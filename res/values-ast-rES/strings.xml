@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
   <string name="share">Compartir</string>
   <string name="stop">Parar</string>
   <string name="insufficient_storage">Almacenamientu insufiente</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Grabación llista pa compartir</string>
   <string name="video_length">Duración del videu: %s</string>
   <string name="not_enough_storage">Nun hai bastante espaciu disponible</string>
-  <string name="start_screencast">Aniciar Screencast</string>
-  <string name="start_description">Calca \"Aniciar Screencast\" pa entamar a grabar un videu de la to pantalla d\'Android y micrófonu.</string>
 </resources>

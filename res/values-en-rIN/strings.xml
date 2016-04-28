@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
   <string name="share">Share</string>
   <string name="stop">Stop</string>
   <string name="insufficient_storage">Insufficient storage</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Recording ready to share</string>
   <string name="video_length">Video length: %s</string>
   <string name="not_enough_storage">Not enough storage available</string>
-  <string name="start_screencast">Start Screencast</string>
-  <string name="start_description">Press \"Start Screencast\" to begin recording a video of your Android screen and microphone.</string>
 </resources>

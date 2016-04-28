@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">ஸ்க்ரீன்கேஸ்ட்</string>
   <string name="share">பகிர்</string>
   <string name="stop">நிறுத்து</string>
   <string name="insufficient_storage">சேமிப்பக பற்றாக்குறை</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">பதிவுசெய்தல் பகிர தயார்</string>
   <string name="video_length">வீடியோ நீளம்: %s</string>
   <string name="not_enough_storage">போதிய சேமிப்பகம் கிடைக்கவில்லை</string>
-  <string name="start_screencast">ஸ்க்ரீன்கேஸ்டை தொடங்கு</string>
-  <string name="start_description">\&quot;Start Screencast\&quot; அழுத்தி உங்கள் ஆண்டிராய்டு திரை மற்றும் மைக்ரோஃபோனின் வீடியோவை பதிவுசெய்ய தொடங்கவும்.</string>
-  <string name="start_description_no_audio">உங்கள் ஆண்ட்ராய்ட் திரையில் ஒரு வீடியோ பதிவு தொடங்க \"Start Screencast\" அழுத்தவும்.</string>
-  <string name="no_audio_warning">ஆடியோவை சேர்க்க, அமைப்புகளில் சென்று இந்தப் பயன்பாட்டின் மைக்ரோஃபோனை செயல்படுத்த அனுமதி பெறவும்.</string>
-  <string name="settings">அமைப்புகள்</string>
 </resources>

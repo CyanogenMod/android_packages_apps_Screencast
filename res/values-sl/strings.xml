@@ -16,18 +16,18 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Posnetek zaslona</string>
+  <string name="app_name">Snemalnik zaslona</string>
   <string name="share">Deli</string>
   <string name="stop">Ustavi</string>
   <string name="insufficient_storage">Nezadostna velikost pomnilniške naprave</string>
   <string name="show_touches">Prikaži dotike</string>
+  <string name="hide_touches">Skrij dotike</string>
   <string name="recording">Snemanje \u2026</string>
   <string name="recording_ready_to_share">Posnetek pripravljen za deljenje</string>
   <string name="video_length">Dolžina videoposnetka: %s</string>
   <string name="not_enough_storage">Ni na voljo dovolj prostora</string>
-  <string name="start_screencast">Zaženi posnetek zaslona</string>
-  <string name="start_description">Pritisnite \"Zaženi posnetek zaslona\", da začnete snemanje svojega zaslona Android in mikrofona.</string>
-  <string name="start_description_no_audio">Pritisnite \"Zaženi posnetek zaslona\", da začnete snemanje svojega zaslona Android.</string>
-  <string name="no_audio_warning">Za vključitev zvoka pojdite v Nastavitve in za to aplikacijo omogočite dovoljenje za mikrofon.</string>
-  <string name="settings">Nastavitve</string>
+  <string name="start_description">Tapnite za začetek snemanja zaslona in mikrofona vaše naprave</string>
+  <string name="start_description_no_audio">Tapnite za začetek snemanja zaslona vaše naprave</string>
+  <string name="stop_description">Tapnite za prekinitev snemanja</string>
+  <string name="no_audio_warning">Za vključitev zvoka <b>tapnite tukaj</b></string>
 </resources>

@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">स्क्रीनकास्ट</string>
   <string name="share">सामायिक करा</string>
   <string name="stop">थांबा</string>
   <string name="insufficient_storage">अपुरे संचयन</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">शेअर करण्यासाठी रेकॉर्डिंग तयार</string>
   <string name="video_length">व्हिडिओ लांबी: %s</string>
   <string name="not_enough_storage">पुरेसे संग्रह उपलब्ध नाही</string>
-  <string name="start_screencast">स्क्रीनकास्ट सुरू करा</string>
-  <string name="start_description">तुमच्या Android स्क्रीन आणि मायक्रोफनचा व्हिडिओ रेकॉर्ड करणे चालू करण्यासाठी \&quot;स्क्रीनकास्ट सुरू करा\&quot; दाबा.</string>
-  <string name="start_description_no_audio">तूमच्या अॅन्ड्रॉइड स्क्रिनवर विडीयो रेकॉर्डिंग सूरु करण्यासाठी \"Start Screencast\" दाबा.</string>
-  <string name="no_audio_warning">ऑडीयो सामाविष्ट करण्यासाठी सेटिंग्स मध्ये जा आणि या अॅप करीता माइक्रोफोन परमिशन सक्षम करा.</string>
-  <string name="settings">सेटिंग्स</string>
 </resources>

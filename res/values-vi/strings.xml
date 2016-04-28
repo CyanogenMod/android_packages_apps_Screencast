@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Quay video màn hình</string>
   <string name="share">Chia sẻ</string>
   <string name="stop">Dừng</string>
   <string name="insufficient_storage">Không đủ bộ nhớ</string>
@@ -25,9 +24,4 @@
   <string name="recording_ready_to_share">Đoạn phim đã sẵn sàng để chia sẻ</string>
   <string name="video_length">Độ dài video: %s</string>
   <string name="not_enough_storage">Không đủ bộ nhớ khả dụng</string>
-  <string name="start_screencast">Bắt đầu quay video màn hình</string>
-  <string name="start_description">Nhấn \"Bắt đầu quay video màn hình\" để bắt đầu quay video cho màn hình và micrô Android của bạn.</string>
-  <string name="start_description_no_audio">Nhấn \"Bắt đầu quay video màn hình\" để bắt đầu quay video màn hình Android của bạn.</string>
-  <string name="no_audio_warning">Để kèm âm thanh, đi đến Cài đặt và kích hoạt quyền sử dụng micro cho ứng dụng này.</string>
-  <string name="settings">Cài đặt</string>
 </resources>

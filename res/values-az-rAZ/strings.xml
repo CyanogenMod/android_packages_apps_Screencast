@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Ekran yayımı</string>
   <string name="share">Paylaş</string>
   <string name="stop">Dayandır</string>
   <string name="insufficient_storage">Saxlama sahəsi azdır</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Səsyazma paylaşım üçün hazırdır</string>
   <string name="video_length">Video uzunluğu: %s</string>
   <string name="not_enough_storage">Kifayət qədər yaddaş yoxdur</string>
-  <string name="start_screencast">Ekran yayımına başla</string>
-  <string name="start_description">Android ekran və mikrofon video yazmasına başlamaq üçün \"Ekran yayımına başla\"ya basın.</string>
 </resources>

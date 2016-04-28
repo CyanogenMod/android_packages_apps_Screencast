@@ -16,7 +16,6 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Screencast</string>
   <string name="share">Zdieľať</string>
   <string name="stop">Zastaviť</string>
   <string name="insufficient_storage">Nedostatočne veľký ukladací priestor</string>
@@ -25,6 +24,4 @@
   <string name="recording_ready_to_share">Nahrávanie pripravené na zdieľanie</string>
   <string name="video_length">Dĺžka videa: %s</string>
   <string name="not_enough_storage">Nedostatok miesta v ukladacom priestore</string>
-  <string name="start_screencast">Spustiť Screencast</string>
-  <string name="start_description">Stlačte \"Spustiť Screencast\" pre spustenie nahrávania videa vašej Android obrazovky a mikrofónu.</string>
 </resources>
