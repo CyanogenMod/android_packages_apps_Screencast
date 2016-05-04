@@ -62,10 +62,11 @@ public class ScreencastService extends Service {
 
     private static final String SHOW_TOUCHES = "show_touches";
 
-    private BroadcastReceiver mUserSwitchReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_USER_BACKGROUND)) {
+            if (intent.getAction().equals(Intent.ACTION_USER_BACKGROUND) ||
+                intent.getAction().equals(Intent.ACTION_SHUTDOWN)) {
                 context.startService(new Intent(ACTION_STOP_SCREENCAST)
                         .setClass(context, ScreencastService.class));
             }
@@ -99,14 +100,15 @@ public class ScreencastService extends Service {
         stopCasting();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_USER_BACKGROUND);
-        registerReceiver(mUserSwitchReceiver, filter);
+        filter.addAction(Intent.ACTION_SHUTDOWN);
+        registerReceiver(mBroadcastReceiver, filter);
         super.onCreate();
     }
 
     @Override
     public void onDestroy() {
         stopCasting();
-        unregisterReceiver(mUserSwitchReceiver);
+        unregisterReceiver(mBroadcastReceiver);
         super.onDestroy();
     }
 
