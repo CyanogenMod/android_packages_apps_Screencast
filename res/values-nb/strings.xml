@@ -16,12 +16,18 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Skjermopptaker</string>
   <string name="share">Del</string>
   <string name="stop">stopp</string>
   <string name="insufficient_storage">Ikke nok lagringsplass</string>
   <string name="show_touches">Vis detaljer</string>
+  <string name="hide_touches">Skjul skjermtrykk</string>
   <string name="recording">Tar opp\u20926</string>
   <string name="recording_ready_to_share">Opptak klar til deling</string>
   <string name="video_length">Videolengde: %s</string>
   <string name="not_enough_storage">Ikke nok lagringsplass</string>
+  <string name="start_description">Trykk for å starte opptaket av skjermen og mikrofonen på enheten din</string>
+  <string name="start_description_no_audio">Trykk for å starte opptaket av skjermen på enheten din</string>
+  <string name="stop_description">Trykk for å stoppe skjermopptak</string>
+  <string name="no_audio_warning">For å inkludere lyd, <b>trykk her</b></string>
 </resources>

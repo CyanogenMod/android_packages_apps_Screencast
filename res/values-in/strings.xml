@@ -16,12 +16,18 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Perekam Layar</string>
   <string name="share">Bagikan</string>
   <string name="stop">Hentikan</string>
   <string name="insufficient_storage">Penyimpanan tidak mencukupi</string>
   <string name="show_touches">Tampilkan sentuhan</string>
+  <string name="hide_touches">Sembunyikan sentuhan</string>
   <string name="recording">Merekam\u2026</string>
   <string name="recording_ready_to_share">Rekaman siap untuk dibagikan</string>
   <string name="video_length">Durasi video: %s</string>
   <string name="not_enough_storage">Penyimpanan yang tersedia tidak cukup</string>
+  <string name="start_description">Ketuk untuk memulai perekaman layar dan mikrofon perangkat Anda</string>
+  <string name="start_description_no_audio">Ketuk untuk memulai perekaman layar perangkat Anda</string>
+  <string name="stop_description">Ketuk untuk menghentikan perekaman</string>
+  <string name="no_audio_warning">Untuk menyertakan audio, <b>ketuk di sini</b></string>
 </resources>

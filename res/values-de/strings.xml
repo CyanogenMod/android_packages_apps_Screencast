@@ -29,4 +29,5 @@
   <string name="start_description">Tippen, um die Bildschirm- und Mikrofon-Aufzeichnung zu starten</string>
   <string name="start_description_no_audio">Tippen, um die Bildschirmaufzeichnung zu starten</string>
   <string name="stop_description">Tippen, um die Aufzeichnung zu beenden</string>
+  <string name="no_audio_warning"><b>Hier tippen</b>, um zusätzlich Ton aufzunehmen</string>
 </resources>

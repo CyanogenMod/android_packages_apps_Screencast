@@ -28,6 +28,6 @@
   <string name="not_enough_storage">Armazenamento disponível insuficiente</string>
   <string name="start_description">Toque para iniciar a gravação da tela e do microfone do seu dispositivo</string>
   <string name="start_description_no_audio">Toque para começar a gravar a tela do seu dispositivo</string>
-  <string name="stop_description">Toque em para parar a gravação</string>
+  <string name="stop_description">Toque para parar gravação</string>
   <string name="no_audio_warning">Para incluir o áudio, <b>toque aqui</b></string>
 </resources>

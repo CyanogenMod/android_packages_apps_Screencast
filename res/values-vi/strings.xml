@@ -16,12 +16,18 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Quay màn hình</string>
   <string name="share">Chia sẻ</string>
   <string name="stop">Dừng</string>
   <string name="insufficient_storage">Không đủ bộ nhớ</string>
   <string name="show_touches">Hiện thao tác chạm</string>
+  <string name="hide_touches">Ẩn chạm</string>
   <string name="recording">Đang quay\u2026</string>
   <string name="recording_ready_to_share">Đoạn phim đã sẵn sàng để chia sẻ</string>
   <string name="video_length">Độ dài video: %s</string>
   <string name="not_enough_storage">Không đủ bộ nhớ khả dụng</string>
+  <string name="start_description">Chạm để bắt đầu quay màn hình và micro của thiết bị</string>
+  <string name="start_description_no_audio">Chạm để bắt đầu quay màn hình của thiết bị</string>
+  <string name="stop_description">Chạm để dừng quay</string>
+  <string name="no_audio_warning">Để bao gồm âm thanh, <b>chạm vào đây</b></string>
 </resources>
