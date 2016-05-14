@@ -27,7 +27,7 @@
   <string name="not_enough_storage">No hay suficiente almacenamiento disponible</string>
   <string name="start_screencast">Iniciar captura</string>
   <string name="start_description">Pulsa \u00ABIniciar captura\u00BB para empezar a grabar un video de la pantalla y micrófono de tu Android.</string>
-  <string name="start_description_no_audio">Pulsa \"Iniciar Screencast\" para comenzar a grabar un video de la pantalla de tu Android.</string>
+  <string name="start_description_no_audio">Pulsar \"Iniciar Screencast\" para comenzar a grabar un video de la pantalla de tu Android.</string>
   <string name="no_audio_warning">Para incluir el audio, ir a configuración y activar el permiso de micrófono para esta aplicación.</string>
   <string name="settings">Ajustes</string>
 </resources>

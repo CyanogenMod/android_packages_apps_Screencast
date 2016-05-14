@@ -20,7 +20,7 @@
   <string name="share">Partager</string>
   <string name="stop">Arrêter</string>
   <string name="insufficient_storage">Stockage insuffisant</string>
-  <string name="show_touches">Afficher les touches</string>
+  <string name="show_touches">Afficher les appuis sur l\'écran</string>
   <string name="recording">Enregistrement\u2026</string>
   <string name="recording_ready_to_share">Enregistrement prêt à être partagé</string>
   <string name="video_length">Durée de la vidéo : %s</string>

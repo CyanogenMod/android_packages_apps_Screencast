@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Nun hai bastante espaciu disponible</string>
   <string name="start_screencast">Aniciar Screencast</string>
   <string name="start_description">Calca \"Aniciar Screencast\" pa entamar a grabar un videu de la to pantalla d\'Android y micrófonu.</string>
+  <string name="start_description_no_audio">Primi «Aniciar Screencast» pa entamar a grabar un videu de la to pantalla d\'Android.</string>
+  <string name="no_audio_warning">Pa incluyir l\'audiu, vete a Axustes y habilita\'l permisu del micrófonu pa esta aplicación.</string>
+  <string name="settings">Axustes</string>
 </resources>
