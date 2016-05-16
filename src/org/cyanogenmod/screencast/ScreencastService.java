@@ -52,6 +52,7 @@ public class ScreencastService extends Service {
     public static final String SCREENCASTER_NAME = "hidden:screen-recording";
     public static final String PREFS = "preferences";
     static final String KEY_RECORDING = "recording";
+    static final String KEY_WITHAUDIO = "withaudio";
     private long startTime;
     private Timer timer;
     private Notification.Builder mBuilder;
@@ -156,7 +157,9 @@ public class ScreencastService extends Service {
         assert mRecorder == null;
         Point size = getNativeResolution();
         // size = new Point(1080, 1920);
-        mRecorder = new RecordingDevice(this, size.x, size.y);
+        boolean withAudio = getSharedPreferences(ScreencastService.PREFS, 0).
+		getBoolean(ScreencastService.KEY_WITHAUDIO, true);
+        mRecorder = new RecordingDevice(this, size.x, size.y, withAudio);
         VirtualDisplay vd = mRecorder.registerVirtualDisplay(this,
                 SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
         if (vd == null)
