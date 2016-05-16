@@ -23,6 +23,11 @@
             android:src="@drawable/record" />
     </FrameLayout>
 
+    <CheckBox android:id="@+id/with_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/with_audio" />
+
     <TextView
         android:id="@+id/audio_warning"
         style="@style/textStyle"

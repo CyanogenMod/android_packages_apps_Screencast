@@ -40,11 +40,13 @@ import java.util.concurrent.Semaphore;
 class RecordingDevice extends EncoderDevice {
     private static final String LOGTAG = "RecordingDevice";
     private static final File RECORDINGS_DIR = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES), "Screencasts");
+    private boolean mRecordAudio;
     File path;
     public boolean shouldRecordAudio;
 
-    public RecordingDevice(Context context, int width, int height) {
+    public RecordingDevice(Context context, int width, int height, boolean recordAudio) {
         super(context, width, height);
+        mRecordAudio = recordAudio;
         // Prepare all the output metadata
         String videoDate = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date(System.currentTimeMillis()));
         // the directory which holds all recording files
@@ -266,21 +268,27 @@ class RecordingDevice extends EncoderDevice {
 
                     // now that we have the Magic Goodies, start the muxer
                     trackIndex = muxer.addTrack(newFormat);
-                    audio = new AudioRecorder(this);
-                    Semaphore semaphore = new Semaphore(0);
-                    audioMuxer = new AudioMuxer(audio, muxer, semaphore);
-                    muxerStarted = true;
-                    new Thread(audio, "AudioRecorder").start();
-                    audioThread = new Thread(audioMuxer, "AudioMuxer");
-                    audioThread.start();
+                    if (mRecordAudio) {
+                        audio = new AudioRecorder(this);
+                        Semaphore semaphore = new Semaphore(0);
+                        audioMuxer = new AudioMuxer(audio, muxer, semaphore);
+                        muxerStarted = true;
+                        new Thread(audio, "AudioRecorder").start();
+                        audioThread = new Thread(audioMuxer, "AudioMuxer");
+                        audioThread.start();
 
-                    semaphore.acquire();
+                        semaphore.acquire();
+                    } else {
+                        muxer.start();
+                        muxerStarted = true;
+                    }
                     Log.i(LOGTAG, "Muxing");
                 }
             }
             doneCoding = true;
             Log.i(LOGTAG, "Done recording");
-            audioThread.join();
+            if (audioThread != null)
+                audioThread.join();
             muxer.stop();
             MediaScannerConnection.scanFile(context,
             new String[]{path.getAbsolutePath()}, null,
