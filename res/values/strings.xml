@@ -29,4 +29,5 @@
     <string name="start_description_no_audio">Tap to start recording the screen of your device</string>
     <string name="stop_description">Tap to stop recording</string>
     <string name="no_audio_warning">To include audio, <b>tap here</b></string>
+    <string name="no_audio_setting_warning">To include audio, <b>tap here to goto Settings and enable the microphone permission for this app</b></string>
 </resources>

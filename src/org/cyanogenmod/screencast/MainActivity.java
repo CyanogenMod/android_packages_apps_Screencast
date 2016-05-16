@@ -38,6 +38,7 @@ public class MainActivity extends Activity {
     private TextView mText;
     private TextView mAudioText;
     private boolean mHasAudioPermission;
+    private boolean mAudioPermissionRequired;
     private static final int REQUEST_AUDIO_PERMS = 654;
 
     @Override
@@ -73,13 +74,6 @@ public class MainActivity extends Activity {
                             .setClass(MainActivity.this, ScreencastService.class));
                     finish();
                 }
-            }
-        });
-
-        mAudioText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requestNecessaryPermissions();
             }
         });
 
@@ -120,6 +114,7 @@ public class MainActivity extends Activity {
             }
             refreshState();
         }
+        mAudioPermissionRequired = true;
     }
 
     private void refreshState() {
@@ -133,6 +128,32 @@ public class MainActivity extends Activity {
             mScreencastButton.setImageResource(R.drawable.record);
             mText.setText(mHasAudioPermission ?
                     R.string.start_description : R.string.start_description_no_audio);
+            if (!mHasAudioPermission)
+                if (mAudioPermissionRequired &&
+                        !shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
+                    mAudioText.setText(getResources().getString(R.string.no_audio_setting_warning));
+                    mAudioText.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            intent.addCategory(Intent.CATEGORY_DEFAULT);
+                            intent.setData(Uri.parse("package:" + getPackageName()));
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                            startActivity(intent);
+                        }
+                        });
+                } else {
+                    mAudioText.setText(getResources().getString(R.string.no_audio_warning));
+                    mAudioText.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            requestNecessaryPermissions();
+                        }
+                        });
+
+                }
             mAudioText.setVisibility(mHasAudioPermission ? View.GONE: View.VISIBLE);
         }
     }
