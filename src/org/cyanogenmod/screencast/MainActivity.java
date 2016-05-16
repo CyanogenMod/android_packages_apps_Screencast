@@ -29,6 +29,8 @@ import android.view.ViewAnimationUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -37,7 +39,9 @@ public class MainActivity extends Activity {
     private ImageButton mScreencastButton;
     private TextView mText;
     private TextView mAudioText;
+    private CheckBox mChkWithAudio;
     private boolean mHasAudioPermission;
+    private boolean mAudioPermissionRequired;
     private static final int REQUEST_AUDIO_PERMS = 654;
 
     @Override
@@ -48,6 +52,7 @@ public class MainActivity extends Activity {
         mScreencastButton = (ImageButton) findViewById(R.id.screencast);
         mText = (TextView) findViewById(R.id.hint);
         mAudioText = (TextView) findViewById(R.id.audio_warning);
+        mChkWithAudio = (CheckBox) findViewById(R.id.with_audio);
 
         mScreencastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,19 +72,16 @@ public class MainActivity extends Activity {
                     // record
                     getSharedPreferences(ScreencastService.PREFS, 0)
                             .edit()
+                            .putBoolean(ScreencastService.KEY_WITHAUDIO, mChkWithAudio.isChecked())
+                            .apply();
+                    getSharedPreferences(ScreencastService.PREFS, 0)
+                            .edit()
                             .putBoolean(ScreencastService.KEY_RECORDING, true)
                             .apply();
                     startService(new Intent("org.cyanogenmod.ACTION_START_SCREENCAST")
                             .setClass(MainActivity.this, ScreencastService.class));
                     finish();
                 }
-            }
-        });
-
-        mAudioText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                requestNecessaryPermissions();
             }
         });
 
@@ -120,6 +122,7 @@ public class MainActivity extends Activity {
             }
             refreshState();
         }
+        mAudioPermissionRequired = true;
     }
 
     private void refreshState() {
@@ -129,11 +132,46 @@ public class MainActivity extends Activity {
             mScreencastButton.setImageResource(R.drawable.stop);
             mText.setText(R.string.stop_description);
             mAudioText.setVisibility(View.GONE);
+            mChkWithAudio.setVisibility(View.GONE);
         } else {
             mScreencastButton.setImageResource(R.drawable.record);
-            mText.setText(mHasAudioPermission ?
-                    R.string.start_description : R.string.start_description_no_audio);
-            mAudioText.setVisibility(mHasAudioPermission ? View.GONE: View.VISIBLE);
+            mText.setText(R.string.start_description);
+            if (!mHasAudioPermission) {
+                mChkWithAudio.setChecked(false);
+                if (mAudioPermissionRequired &&
+                        !shouldShowRequestPermissionRationale(Manifest.permission.RECORD_AUDIO)) {
+                    mAudioText.setText(getResources().getString(R.string.no_audio_setting_warning));
+                    mAudioText.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            intent.addCategory(Intent.CATEGORY_DEFAULT);
+                            intent.setData(Uri.parse("package:" + getPackageName()));
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                            startActivity(intent);
+                        }
+                        });
+                    mAudioText.setVisibility(View.VISIBLE);
+                    mChkWithAudio.setVisibility(View.GONE);
+                } else {
+                    mAudioText.setVisibility(View.GONE);
+                    mChkWithAudio.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                            if (isChecked) {
+                                requestNecessaryPermissions();
+                            }
+                        }
+                        });
+                    mChkWithAudio.setVisibility(View.VISIBLE);
+                }
+            } else {
+                mChkWithAudio.setVisibility(View.VISIBLE);
+                mChkWithAudio.setOnCheckedChangeListener(null);
+                mAudioText.setVisibility(View.GONE);
+            }
         }
     }
 
