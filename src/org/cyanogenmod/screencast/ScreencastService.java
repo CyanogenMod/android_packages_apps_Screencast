@@ -52,6 +52,7 @@ public class ScreencastService extends Service {
     public static final String SCREENCASTER_NAME = "hidden:screen-recording";
     public static final String PREFS = "preferences";
     static final String KEY_RECORDING = "recording";
+    static final String EXTRA_WITHAUDIO = "withaudio";
     private long startTime;
     private Timer timer;
     private Notification.Builder mBuilder;
@@ -147,7 +148,7 @@ public class ScreencastService extends Service {
         return ret;
     }
 
-    void registerScreencaster() throws RemoteException {
+    void registerScreencaster(boolean withAudio) throws RemoteException {
         DisplayManager dm = (DisplayManager)getSystemService(DISPLAY_SERVICE);
         Display display = dm.getDisplay(Display.DEFAULT_DISPLAY);
         DisplayMetrics metrics = new DisplayMetrics();
@@ -156,7 +157,7 @@ public class ScreencastService extends Service {
         assert mRecorder == null;
         Point size = getNativeResolution();
         // size = new Point(1080, 1920);
-        mRecorder = new RecordingDevice(this, size.x, size.y);
+        mRecorder = new RecordingDevice(this, size.x, size.y, withAudio);
         VirtualDisplay vd = mRecorder.registerVirtualDisplay(this,
                 SCREENCASTER_NAME, size.x, size.y, metrics.densityDpi);
         if (vd == null)
@@ -195,7 +196,8 @@ public class ScreencastService extends Service {
                     return START_NOT_STICKY;
                 }
                 startTime = SystemClock.elapsedRealtime();
-                registerScreencaster();
+                boolean withAudio = intent.getBooleanExtra(EXTRA_WITHAUDIO, true);
+                registerScreencaster(withAudio);
                 mBuilder = createNotificationBuilder();
 
                 if (Process.myUserHandle().isOwner()) {
