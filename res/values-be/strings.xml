@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Бракуе вольнай памяці</string>
   <string name="start_screencast">Пачаць запіс</string>
   <string name="start_description">Націсніце «Пачаць запіс», каб запісаць відэа з экрана прылады і гуку з убудаванага мікрафона.</string>
+  <string name="start_description_no_audio">Націсніце \"Пачаць запіс\", каб запісаць відэа з экрана вашай прылады.</string>
+  <string name="no_audio_warning">Каб уключыць запіс гука, перайдзіце да наладаў ды дайце дазвол гэтаму дадатку выкарыстоўваць мікрафон.</string>
+  <string name="settings">Налады</string>
 </resources>
