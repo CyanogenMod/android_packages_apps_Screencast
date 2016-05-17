@@ -20,6 +20,7 @@
   <string name="stop">Stoppen</string>
   <string name="insufficient_storage">Onvoldoende opslagruimte</string>
   <string name="show_touches">Aanrakingen</string>
+  <string name="hide_touches">Aanrakingen verbergen</string>
   <string name="recording">Opnemen\u2026</string>
   <string name="recording_ready_to_share">Opname klaar om te delen</string>
   <string name="video_length">Videolengte: %s</string>
