@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Записът е готов за споделяне</string>
   <string name="video_length">Продължителноста на видеото е %s</string>
   <string name="not_enough_storage">Няма достатъчно място за съхранение</string>
+  <string name="start_description">Натиснете, за да започнете да записвате екрана на устройството</string>
   <string name="stop_description">Натиснете, за да спрете записа</string>
+  <string name="with_audio">Включи звука от микрофона</string>
+  <string name="no_audio_setting_warning">За да включите аудио, <b>натиснете тук за да отидете в "Настройки" и да разрешете на приложението да използва микрофона </b></string>
 </resources>

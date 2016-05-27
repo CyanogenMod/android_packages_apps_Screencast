@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Nauhoitus valmis jaettavaksi</string>
   <string name="video_length">Videon kesto: %s</string>
   <string name="not_enough_storage">Muistia ei riittävästi saatavilla</string>
+  <string name="start_description">Paina tästä aloittaaksesi laitteen näytön kuvan nauhoittamisen</string>
   <string name="stop_description">Lopeta nauhoittaminen</string>
+  <string name="with_audio">Sisällytä ääni mikrofonista</string>
+  <string name="no_audio_setting_warning">Sisällyttääksesi äänen videoon,<b>paina tästä mennäksesi Asetuksiin, ja salli sovellukselle mikrofonin käyttö</b></string>
 </resources>
