@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Kayıt paylaşıma hazır</string>
   <string name="video_length">Video uzunluğu: %s</string>
   <string name="not_enough_storage">Yeterli kullanılabilir depolama alanı yok</string>
-  <string name="start_description">Aygıtınızın ekran ve mikrofon kaydını başlatmak için dokunun</string>
-  <string name="start_description_no_audio">Aygıtınızın ekran kaydını başlatmak için dokunun</string>
   <string name="stop_description">Kaydı durdurmak için dokunun</string>
-  <string name="no_audio_warning">Ses eklemek için <b>buraya dokunun</b></string>
 </resources>

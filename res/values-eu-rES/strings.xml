@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Grabazioa partekatzeko prest dago</string>
   <string name="video_length">Bideo luzera: %s</string>
   <string name="not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
-  <string name="start_description">Sakatu zure gailuaren pantaila eta mikrofonoa grabatzen hasteko</string>
-  <string name="start_description_no_audio">Sakatu zure gailuaren pantaila grabatzen hasteko</string>
   <string name="stop_description">Sakatu grabaketa gelditzeko</string>
-  <string name="no_audio_warning">Audioa txertatzeko <b>sakatu hemen</b></string>
 </resources>

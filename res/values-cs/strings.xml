@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Záznam je připraven ke sdílení</string>
   <string name="video_length">Délka záznamu: %s</string>
   <string name="not_enough_storage">Nedostatek místa v úložišti</string>
-  <string name="start_description">Dotykem zahájíte nahrávání obrazovky i se zvukem</string>
-  <string name="start_description_no_audio">Dotykem zahájíte nahrávání obrazovky</string>
   <string name="stop_description">Dotykem zastavit pořizování záznamu</string>
-  <string name="no_audio_warning">Chcete-li nahrát i zvuk, <b>klepněte sem</b></string>
 </resources>

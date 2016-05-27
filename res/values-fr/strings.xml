@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Enregistrement prêt à être partagé</string>
   <string name="video_length">Durée de la vidéo : %s</string>
   <string name="not_enough_storage">Mémoire disponible insuffisante</string>
-  <string name="start_description">Appuyer pour commencer l\'enregistrement de l\'écran et du microphone de votre appareil</string>
-  <string name="start_description_no_audio">Appuyer pour commencer l\'enregistrement de l\'écran de votre appareil</string>
   <string name="stop_description">Appuyer pour arrêter l\'enregistrement</string>
-  <string name="no_audio_warning">Pour inclure l\'audio, <b>appuyez ici</b></string>
 </resources>

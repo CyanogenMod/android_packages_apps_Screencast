@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Aufzeichnung bereit zum Teilen</string>
   <string name="video_length">Videolänge: %s</string>
   <string name="not_enough_storage">Zu wenig freier Speicher</string>
-  <string name="start_description">Tippen, um die Bildschirm- und Mikrofon-Aufzeichnung zu starten</string>
-  <string name="start_description_no_audio">Tippen, um die Bildschirmaufzeichnung zu starten</string>
   <string name="stop_description">Tippen, um die Aufzeichnung zu beenden</string>
-  <string name="no_audio_warning"><b>Hier tippen</b>, um zusätzlich Ton aufzunehmen</string>
 </resources>

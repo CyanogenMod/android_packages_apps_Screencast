@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Registrazione pronta per la condivisione</string>
   <string name="video_length">Durata video: %s</string>
   <string name="not_enough_storage">Non è disponibile spazio di archiviazione a sufficienza</string>
-  <string name="start_description">Tocca per iniziare a registrare lo schermo e il microfono del tuo dispositivo</string>
-  <string name="start_description_no_audio">Tocca per iniziare a registrare lo schermo del tuo dispositivo</string>
   <string name="stop_description">Tocca per fermare la registrazione</string>
-  <string name="no_audio_warning">Per includere l\'audio, <b>tocca qui</b></string>
 </resources>

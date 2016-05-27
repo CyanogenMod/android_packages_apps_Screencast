@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Rekaman siap untuk dibagikan</string>
   <string name="video_length">Durasi video: %s</string>
   <string name="not_enough_storage">Penyimpanan yang tersedia tidak cukup</string>
-  <string name="start_description">Ketuk untuk memulai perekaman layar dan mikrofon perangkat Anda</string>
-  <string name="start_description_no_audio">Ketuk untuk memulai perekaman layar perangkat Anda</string>
   <string name="stop_description">Ketuk untuk menghentikan perekaman</string>
-  <string name="no_audio_warning">Untuk menyertakan audio, <b>ketuk di sini</b></string>
 </resources>

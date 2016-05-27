@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Grabación lista para ser compartida</string>
   <string name="video_length">Duración del video: %s</string>
   <string name="not_enough_storage">No hay suficiente almacenamiento disponible</string>
-  <string name="start_description">Pulsa para iniciar la grabación de pantalla y del micrófono de tu dispositivo</string>
-  <string name="start_description_no_audio">Pulsa para iniciar la grabación de pantalla de tu dispositivo</string>
   <string name="stop_description">Pulsa para detener la grabación</string>
-  <string name="no_audio_warning">Para incluir el audio, <b>pulsa aquí</b></string>
 </resources>

@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Η καταγραφή είναι έτοιμη για κοινή χρήση</string>
   <string name="video_length">Μήκος βίντεο: %s</string>
   <string name="not_enough_storage">Δεν υπάρχει αρκετός διαθέσιμος χώρος αποθήκευσης</string>
-  <string name="start_description">Πατήστε για να ξεκινήσει η εγγραφή της οθόνης και του μικροφώνου</string>
-  <string name="start_description_no_audio">Πατήστε για να ξεκινήσει η εγγραφή της οθόνης</string>
   <string name="stop_description">Πατήστε για διακοπή της εγγραφής</string>
-  <string name="no_audio_warning">Για να συμπεριλάβετε ήχο, <b>πατήστε εδώ</b></string>
 </resources>

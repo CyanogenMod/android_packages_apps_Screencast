@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Grabación llista pa compartir</string>
   <string name="video_length">Duración del videu: %s</string>
   <string name="not_enough_storage">Nun hai bastante espaciu disponible</string>
-  <string name="start_description">Calca p\'aniciar la grabación de la pantalla y micrófonu del to preséu</string>
-  <string name="start_description_no_audio">Calca p\'aniciu la grabación de la pantalla del to preséu</string>
   <string name="stop_description">Calca pa parar la grabación</string>
-  <string name="no_audio_warning">Pa incluyir l\'audiu, <b>calca equí</b></string>
 </resources>

@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">Felvétel megosztásra kész</string>
   <string name="video_length">Videó hossza: %s</string>
   <string name="not_enough_storage">Nincs elég tárhely</string>
-  <string name="start_description">Érintse meg a képernyő- és mikrofonfelvétel indításához</string>
-  <string name="start_description_no_audio">Érintse meg a képernyőfelvétel indításához</string>
   <string name="stop_description">Érintse meg a felvétel leállításához</string>
-  <string name="no_audio_warning">Hang felvételéhez <b>itt érintse meg</b></string>
 </resources>

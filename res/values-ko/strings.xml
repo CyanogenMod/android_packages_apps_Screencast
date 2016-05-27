@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">녹화를 공유할 준비가 되었습니다</string>
   <string name="video_length">비디오 길이: %s</string>
   <string name="not_enough_storage">저장 공간이 충분하지 않습니다</string>
-  <string name="start_description">탭하여 화면 녹화와 장치의 마이크 녹음 시작하기</string>
-  <string name="start_description_no_audio">탭하여 화면 녹화 시작하기</string>
   <string name="stop_description">탭하여 기록 중지</string>
-  <string name="no_audio_warning">소리를 포함하려면 <b>여기를 탭하세요</b></string>
 </resources>

@@ -26,8 +26,5 @@
   <string name="recording_ready_to_share">การบันทึกพร้อมที่จะแบ่งปัน</string>
   <string name="video_length">ความยาววิดีโอ: %s</string>
   <string name="not_enough_storage">พื้นที่เก็บข้อมูลไม่เพียงพอ</string>
-  <string name="start_description">แตะเพื่อบันทึกหน้าจอและไมโครโฟนของอุปกรณ์ของคุณ</string>
-  <string name="start_description_no_audio">แตะเพื่อบันทึกหน้าจองของคุณ</string>
   <string name="stop_description">แตะเพื่อหยุดการบันทึก</string>
-  <string name="no_audio_warning">เพื่อบันทึกเสียงด้วย <b>แตะที่นี่</b></string>
 </resources>
