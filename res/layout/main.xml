@@ -31,7 +31,7 @@
     <TextView
         android:id="@+id/audio_warning"
         style="@style/textStyle"
-        android:text="@string/no_audio_warning"
+        android:text="@string/no_audio_setting_warning"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:paddingTop="8dp"/>
