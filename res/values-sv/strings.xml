@@ -21,6 +21,7 @@
   <string name="stop">Stoppa</string>
   <string name="insufficient_storage">För lite lagringsutrymme</string>
   <string name="show_touches">Visa tryckningar</string>
+  <string name="hide_touches">Dölj tryckningar</string>
   <string name="recording">Spelar in\u2026</string>
   <string name="recording_ready_to_share">Inspelning redo att delas</string>
   <string name="video_length">Videolängd: %s</string>

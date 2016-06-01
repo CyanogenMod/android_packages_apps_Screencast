@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Grabazioa partekatzeko prest dago</string>
   <string name="video_length">Bideo luzera: %s</string>
   <string name="not_enough_storage">Ez dago biltegiratzeko leku nahikorik</string>
+  <string name="start_description">Sakatu zure gailuaren pantaila grabatzen hasteko</string>
   <string name="stop_description">Sakatu grabaketa gelditzeko</string>
+  <string name="with_audio">Txertatu soinua mikrofonotik</string>
+  <string name="no_audio_setting_warning">Audioa gehitzeko, <b>sakatu hemen ezarpenean joateko eta gaitu mikrofonoa erabiltzeko baimena aplikazio honentzat</b></string>
 </resources>

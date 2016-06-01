@@ -16,10 +16,12 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Запіс экрану</string>
   <string name="share">Падзяліцца</string>
   <string name="stop">Стоп</string>
   <string name="insufficient_storage">Недастаткова памяці</string>
   <string name="show_touches">Паказваць крананні</string>
+  <string name="hide_touches">Схаваць крананні</string>
   <string name="recording">Запіс\u2026</string>
   <string name="recording_ready_to_share">Запіс гатоў да адпраўкі</string>
   <string name="video_length">Працягласць відэа: %s</string>

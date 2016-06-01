@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Запись готова к отправке</string>
   <string name="video_length">Длительность видео: %s</string>
   <string name="not_enough_storage">Недостаточно свободной памяти</string>
+  <string name="start_description">Нажмите, чтобы начать запись с экрана устройства</string>
   <string name="stop_description">Нажмите, чтобы остановить запись</string>
+  <string name="with_audio">Включить звук с микрофона</string>
+  <string name="no_audio_setting_warning">Чтобы включить запись звука, <b>нажмите здесь, чтобы перейти в «Настройки» и разрешить приложению использовать микрофон</b></string>
 </resources>

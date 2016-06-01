@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">录制内容已准备好共享</string>
   <string name="video_length">视频长度: %s</string>
   <string name="not_enough_storage">可用存储空间不足</string>
+  <string name="start_description">点击以开始录制您设备的屏幕</string>
   <string name="stop_description">点击以停止录制</string>
+  <string name="with_audio">包括来自麦克风的音频</string>
+  <string name="no_audio_setting_warning">要在视频中加入音频，<b>请点击这里以进入设置，对这个应用授予“麦克风”权限</b>。</string>
 </resources>

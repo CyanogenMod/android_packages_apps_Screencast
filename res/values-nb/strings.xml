@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Opptak klar til deling</string>
   <string name="video_length">Videolengde: %s</string>
   <string name="not_enough_storage">Ikke nok lagringsplass</string>
+  <string name="start_description">Trykk for å starte opptaket av skjermen på enheten din</string>
   <string name="stop_description">Trykk for å stoppe skjermopptak</string>
+  <string name="with_audio">Inkludere lyd fra mikrofonen</string>
+  <string name="no_audio_setting_warning">For å inkludere lyd, <b>trykk her for å gå til Instillinger for å aktivere mikrofon tillatelsen for denne appen</b></string>
 </resources>
