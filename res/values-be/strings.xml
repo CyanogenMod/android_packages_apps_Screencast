@@ -26,4 +26,5 @@
   <string name="recording_ready_to_share">Запіс гатоў да адпраўкі</string>
   <string name="video_length">Працягласць відэа: %s</string>
   <string name="not_enough_storage">Бракуе вольнай памяці</string>
+  <string name="stop_description">Націсні, каб спыніць запіс</string>
 </resources>
