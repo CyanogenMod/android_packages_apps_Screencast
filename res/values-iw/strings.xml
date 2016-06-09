@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">הקלטה מוכנה לשיתוף</string>
   <string name="video_length">אורך וידאו: %s</string>
   <string name="not_enough_storage">אין מספיק מקום אחסון זמין</string>
+  <string name="start_description">הקש להתחלת הסרטה של מסך המכשיר שלך</string>
   <string name="stop_description">גע כדי לעצור הקלטה</string>
+  <string name="with_audio">כלול שמע מהמיקרופון</string>
+  <string name="no_audio_setting_warning">כדי לכלול שמע, <b>הקש כאן כדי לעבור להגדרות ולהפעיל את הרשאות המיקרופון ליישום זה</b></string>
 </resources>
