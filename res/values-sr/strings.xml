@@ -26,5 +26,7 @@
   <string name="recording_ready_to_share">Снимање је спремно за дељење</string>
   <string name="video_length">Дужина видеа: %s</string>
   <string name="not_enough_storage">Нема довољно доступног простора</string>
+  <string name="start_description">Тапните за почетак снимања екрана вашег уређаја</string>
   <string name="stop_description">Тапните за крај снимања</string>
+  <string name="with_audio">Укључи звук са микрофона</string>
 </resources>

@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Záznam je připraven ke sdílení</string>
   <string name="video_length">Délka záznamu: %s</string>
   <string name="not_enough_storage">Nedostatek místa v úložišti</string>
+  <string name="start_description">Dotykem zahájíte nahrávání obrazovky</string>
   <string name="stop_description">Dotykem zastavit pořizování záznamu</string>
+  <string name="with_audio">Zahrnout zvuk z mikrofonu</string>
+  <string name="no_audio_setting_warning">Chcete-li zahrnout zvuk, přejděte do „Nastavení“ a povolte oprávnění použití mikrofonu pro tuto aplikaci</string>
 </resources>
