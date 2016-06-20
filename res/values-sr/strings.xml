@@ -29,4 +29,5 @@
   <string name="start_description">Тапните за почетак снимања екрана вашег уређаја</string>
   <string name="stop_description">Тапните за крај снимања</string>
   <string name="with_audio">Укључи звук са микрофона</string>
+  <string name="no_audio_setting_warning">Да додаш звук, <b>додирни овде да одеш у подешавања и омогућиш дозволу микрофона за ту апликацију</b></string>
 </resources>
