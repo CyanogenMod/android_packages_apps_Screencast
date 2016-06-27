@@ -25,9 +25,9 @@
   <string name="recording_ready_to_share">Posnetek pripravljen za deljenje</string>
   <string name="video_length">Dolžina videoposnetka: %s</string>
   <string name="not_enough_storage">Ni na voljo dovolj prostora</string>
-  <string name="start_screencast">Zaženi posnetek zaslona</string>
-  <string name="start_description">Pritisnite \"Zaženi posnetek zaslona\", da začnete snemanje svojega zaslona Android in mikrofona.</string>
-  <string name="start_description_no_audio">Pritisnite \"Zaženi posnetek zaslona\", da začnete snemanje svojega zaslona Android.</string>
+  <string name="start_screencast">Zaženi Posnetek zaslona</string>
+  <string name="start_description">Pritisnite \"Zaženi Posnetek zaslona\", da začnete snemanje svojega zaslona Android in mikrofona.</string>
+  <string name="start_description_no_audio">Pritisnite \"Zaženi Posnetek zaslona\", da začnete snemanje svojega zaslona Android.</string>
   <string name="no_audio_warning">Za vključitev zvoka pojdite v Nastavitve in za to aplikacijo omogočite dovoljenje za mikrofon.</string>
   <string name="settings">Nastavitve</string>
 </resources>
