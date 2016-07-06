@@ -28,6 +28,6 @@
   <string name="start_screencast">Start Screencast</string>
   <string name="start_description">Trykk \"Start Screencast\" for å registrere en video av Android skjermen og mikrofon.</string>
   <string name="start_description_no_audio">Trykk \"Start Screencast\" for å filme en video av Android skjermen din.</string>
-  <string name="no_audio_warning">For å inkludere lyd, gå til Instillinger og slå på mikrofon-tillatelsen for denne appen.</string>
+  <string name="no_audio_warning">For å inkludere lyd, gå til Innstillinger og slå på mikrofon-tillatelsen for denne appen.</string>
   <string name="settings">Innstillinger</string>
 </resources>
