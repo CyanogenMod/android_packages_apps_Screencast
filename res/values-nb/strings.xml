@@ -29,5 +29,5 @@
   <string name="start_description">Trykk for å starte opptaket av skjermen på enheten din</string>
   <string name="stop_description">Trykk for å stoppe skjermopptak</string>
   <string name="with_audio">Inkludere lyd fra mikrofonen</string>
-  <string name="no_audio_setting_warning">For å inkludere lyd, <b>trykk her for å gå til Instillinger for å aktivere mikrofon tillatelsen for denne appen</b></string>
+  <string name="no_audio_setting_warning">For å inkludere lyd, <b>trykk her for å gå til Innstillinger for å aktivere mikrofon tillatelsen for denne appen</b></string>
 </resources>
