@@ -27,4 +27,7 @@
   <string name="not_enough_storage">Net genuch Späicher disponibel</string>
   <string name="start_screencast">Schiermopnam starten</string>
   <string name="start_description">Dréck \"Schiermopnam starten\" fir eng Videoopnam vum Schierm a vum Mikro ze starten.</string>
+  <string name="start_description_no_audio">Dréck \"Schiermopnam starten\" fir eng Videoopnam vum Android-Schierm ze starten.</string>
+  <string name="no_audio_warning">Géi op Astellungen an aktivéier d\'Mikro-Berechtegung fir dës App fir Toun mat anzebannen.</string>
+  <string name="settings">Astellungen</string>
 </resources>
