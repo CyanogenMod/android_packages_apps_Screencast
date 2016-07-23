@@ -29,5 +29,5 @@
   <string name="start_description">Pica per iniciar l\'enregistrament de la pantalla del teu dispositiu</string>
   <string name="stop_description">Pica per parar l\'enregistrament</string>
   <string name="with_audio">Inclou el so procedent del micròfon</string>
-  <string name="no_audio_setting_warning">Per incloure el so, <b>Pica aquí per anar a Configuració i habilitar el permís del micròfon per a aquesta aplicació</b></string>
+  <string name="no_audio_setting_warning">Per incloure el so, <b>pica aquí per anar a Configuració i habilitar el permís del micròfon per a aquesta aplicació</b></string>
 </resources>
