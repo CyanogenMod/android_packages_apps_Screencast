@@ -16,6 +16,7 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Schermrecorder</string>
   <string name="share">Delen</string>
   <string name="stop">Stoppen</string>
   <string name="insufficient_storage">Onvoldoende opslagruimte</string>
@@ -25,4 +26,8 @@
   <string name="recording_ready_to_share">Opname klaar om te delen</string>
   <string name="video_length">Videolengte: %s</string>
   <string name="not_enough_storage">Onvoldoende opslagruimte beschikbaar</string>
+  <string name="start_description">Tik om te beginnen met het opnemen van uw scherm</string>
+  <string name="stop_description">Tik om te stoppen met opnemen</string>
+  <string name="with_audio">Geluid van microfoon toevoegen</string>
+  <string name="no_audio_setting_warning">Om ook geluid op te nemen, <b>tik hier om naar Instellingen te gaan en de app toestemming te geven de microfoon te gebruiken</b></string>
 </resources>
