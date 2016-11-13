@@ -58,6 +58,8 @@ public class ScreencastService extends Service {
     private Notification.Builder mBuilder;
     RecordingDevice mRecorder;
 
+    private NotificationManager mNotificationManager;
+
     private static final String ACTION_START_SCREENCAST = "org.cyanogenmod.ACTION_START_SCREENCAST";
     private static final String ACTION_STOP_SCREENCAST = "org.cyanogenmod.ACTION_STOP_SCREENCAST";
 
@@ -124,7 +126,7 @@ public class ScreencastService extends Service {
         long timeElapsed = SystemClock.elapsedRealtime() - startTime;
         mBuilder.setContentText(getString(R.string.video_length,
                 DateUtils.formatElapsedTime(timeElapsed / 1000)));
-        startForeground(1, mBuilder.build());
+        mNotificationManager.notify(0, mBuilder.build());
     }
 
     protected Point getNativeResolution() {
@@ -199,6 +201,8 @@ public class ScreencastService extends Service {
                 boolean withAudio = intent.getBooleanExtra(EXTRA_WITHAUDIO, true);
                 registerScreencaster(withAudio);
                 mBuilder = createNotificationBuilder();
+                mNotificationManager =
+                        (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
                 if (Process.myUserHandle().isOwner()) {
                     Settings.System.putInt(getContentResolver(), SHOW_TOUCHES, 1);
@@ -264,11 +268,9 @@ public class ScreencastService extends Service {
     }
 
     private void sendShareNotification(String recordingFilePath) {
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         // share the screencast file
         mBuilder = createShareNotificationBuilder(recordingFilePath);
-        notificationManager.notify(0, mBuilder.build());
+        mNotificationManager.notify(0, mBuilder.build());
     }
 
     private Notification.Builder createShareNotificationBuilder(String file) {
