@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Opname is gereed om gedeel te word</string>
   <string name="video_length">Video lengte: %s</string>
   <string name="not_enough_storage">Daar is nie genoeg stoorspasie beskikbaar nie</string>
+  <string name="start_description">Tik om opneming te begin van jou skerm op jou toestel</string>
   <string name="stop_description">Raak om opname te stop</string>
+  <string name="with_audio">Sluit in Oudio vanaf mikrofoon</string>
+  <string name="no_audio_setting_warning">Om Oudio in te sluit, <b>tik hier om te gaan na instellings en aktiveer die mikrofoon toestemming vir hierdie toepassing</b></string>
 </resources>
