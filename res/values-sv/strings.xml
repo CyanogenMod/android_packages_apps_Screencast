@@ -26,4 +26,5 @@
   <string name="recording_ready_to_share">Inspelning redo att delas</string>
   <string name="video_length">Videolängd: %s</string>
   <string name="not_enough_storage">Det finns inte tillräckligt med lagringsutrymme</string>
+  <string name="stop_description">Tryck för att stoppa inspelningen</string>
 </resources>

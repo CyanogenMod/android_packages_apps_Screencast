@@ -26,5 +26,8 @@
   <string name="recording_ready_to_share">Nagranie gotowe do udostępnienia</string>
   <string name="video_length">Długość wideo: %s</string>
   <string name="not_enough_storage">Za mało pamięci</string>
+  <string name="start_description">Dotknij, aby rozpocząć nagrywanie ekranu urządzenia</string>
   <string name="stop_description">Dotknij, aby zakończyć nagrywanie</string>
+  <string name="with_audio">Dołącz dźwięk z mikrofonu</string>
+  <string name="no_audio_setting_warning">Aby dołączyć dźwięk, <b>przejdź do Ustawień i zezwól na używanie mikrofonu dla tej aplikacji</b></string>
 </resources>
