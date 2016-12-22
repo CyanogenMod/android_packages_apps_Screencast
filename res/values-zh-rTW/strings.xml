@@ -16,12 +16,18 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">螢幕錄製</string>
   <string name="share">分享</string>
   <string name="stop">停止</string>
   <string name="insufficient_storage">儲存空間不足</string>
   <string name="show_touches">顯示觸控回應</string>
+  <string name="hide_touches">隱藏觸控</string>
   <string name="recording">正在錄製\u2026</string>
   <string name="recording_ready_to_share">錄製內容已準備好分享</string>
   <string name="video_length">影片長度：%s</string>
   <string name="not_enough_storage">可用的儲存空間不足</string>
+  <string name="start_description">輕觸即可開始錄製您裝置上的影像</string>
+  <string name="stop_description">輕觸即可停止錄製</string>
+  <string name="with_audio">包括來自麥克風的音效</string>
+  <string name="no_audio_setting_warning">要在錄影中加入音效，<b>請輕觸這裡以進入設定，對此應用程式給予麥克風權限</b>。</string>
 </resources>
